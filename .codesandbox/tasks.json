@@ -1,4 +1,19 @@
 {
-  "setupTasks": [],
-  "tasks": {}
+  "setupTasks": [
+    {
+      "name": "Install dependencies",
+      "command": "pnpm install"
+    }
+  ],
+
+  "tasks": {
+    "start": {
+      "name": "start",
+      "command": "pnpm start",
+      "runAtStart": true,
+      "preview": {
+        "port": 4200
+      }
+    }
+  }
 }
