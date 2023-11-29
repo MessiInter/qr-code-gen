@@ -1,0 +1,8 @@
+{
+  "name": "@qr-code-gen/dev-container",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/workspace",
+  "remoteUser": "root"
+}
