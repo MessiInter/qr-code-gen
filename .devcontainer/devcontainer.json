@@ -4,5 +4,10 @@
     "dockerfile": "./Dockerfile"
   },
   "workspaceFolder": "/workspaces/workspace",
-  "remoteUser": "root"
+  "postCreateCommand": "pnpm install",
+  "remoteUser": "root",
+  "remoteEnv": {
+    "NODE_ENV": "development"
+  },
+  "forwardPorts": ["4200:4200"]
 }
