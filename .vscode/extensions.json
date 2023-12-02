@@ -1,8 +1,10 @@
 {
   "recommendations": [
-    "nrwl.angular-console",
-    "esbenp.prettier-vscode",
-    "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "nrwl.angular-console", // * Nx Console
+    "esbenp.prettier-vscode", // * Prettier - Code formatter
+    "firsttris.vscode-jest-runner", // * Jest Runner
+    "dbaeumer.vscode-eslint", // * ESLint
+    "zhuangtongfa.Material-theme", // * One Dark Pro
+    "PKief.material-icon-theme" // * Material Icon Theme
   ]
 }
