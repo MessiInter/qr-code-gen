@@ -1,4 +1,4 @@
 {
   "help": "You can use fixture to load a fixed set of data located in a file",
-  "aee": "https://docs.cypress.io/api/commands/fixture"
+  "see": "https://docs.cypress.io/api/commands/fixture"
 }
