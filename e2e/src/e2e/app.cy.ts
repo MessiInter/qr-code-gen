@@ -1,5 +1,6 @@
-describe('e2e', () => {
-  beforeEach(() => cy.visit('/'));
+import { navigate } from '../support/app.po';
 
-  it('should loads the example fixture', () => cy.fixture('example'));
+describe('e2e', () => {
+  beforeEach(navigate);
+  it('should load the example fixture', () => cy.fixture('example'));
 });
