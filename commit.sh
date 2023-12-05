@@ -1,17 +1,8 @@
-TMPFILE=$(mktemp /tmp/git-commit-status-message.XXX); \
-		git status --porcelain \
-		  | grep '^[MARCDT]' \
-		  | sort \
-		  | sed -re 's/^([[:upper:]])[[:upper:]]?[[:space:]]+/\\1:\\n/' \
-		  | awk '!x[$0]++' \
-		  | sed -re 's/^([[:upper:]]:)$/\\n\\1/' \
-		  | sed -re 's/^M:$/Modified: /' \
-		  | sed -re 's/^A:$/Added: /' \
-		  | sed -re 's/^R:$/Renamed: /' \
-		  | sed -re 's/^C:$/Copied: /' \
-		  | sed -re 's/^D:$/Deleted: /' \
-		  | sed -re 's/^T:$/File Type Changed: /' \
-		  | tr '\n' ' ' | xargs \
-		  > $TMPFILE; \
-		git commit -F $TMPFILE; \
-		rm -f $TMPFILE \
+# LANG=C.UTF-8 or any UTF-8 English locale supported by your OS may be used
+LANG=C git -c color.status=false status \
+| sed -n -r -e '1,/Changes to be committed:/ d' \
+            -e '1,1 d' \
+                        -e '/^Untracked files:/,$ d' \
+                                    -e 's/^\s*//' \
+                                                -e '/./p' \
+                                                | git commit -F -
