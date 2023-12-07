@@ -15,8 +15,7 @@ git -c color.status=false status \
               -e 's/^\s*//' \
               -e '/./p' \
   | awk '!seen[$0]++' \
+  | tr -s ' ' \
   | git commit -F -
 
-if [ $1 != '--no-push' || $1 != '-np' ]; then
-  git push
-fi
+git push
