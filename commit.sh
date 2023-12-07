@@ -2,8 +2,6 @@
 
 LANG=C.UTF-8
 
-git add --all
-
 git -c color.status=false status \
   | sed -n -r -e '1,/Changes to be committed:/ d' \
               -e '1,1 d' \
