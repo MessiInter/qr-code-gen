@@ -1,1 +1,2 @@
-export const getGreeting = () => cy.get('h1');
+const url: string = '/';
+export const navigate = () => cy.visit(url);
