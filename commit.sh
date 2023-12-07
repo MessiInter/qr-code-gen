@@ -9,5 +9,3 @@ git -c color.status=false status \
               -e 's/^\s*//' \
               -e '/./p' \
   | git commit -F -
-
-git push
