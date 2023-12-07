@@ -18,4 +18,4 @@ git -c color.status=false status \
   | tr -s ' ' \
   | git commit -F -
 
-git push
+git push -u origin $(git rev-parse --abbrev-ref HEAD)
