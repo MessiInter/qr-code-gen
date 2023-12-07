@@ -1,6 +1,6 @@
 {
   "editor.tabSize": 2, // * 2 spaces for JavaScript/TypeScript is now the standard
-  "editor.fontFamily": "Fira Code", // TODO: Install 'Fira Code' font before open this project
+  "editor.fontFamily": "'Fira Code'", // TODO: Install 'Fira Code' font before open this project
   "editor.fontLigatures": true, // * Enable Font Ligatures
   "editor.formatOnSave": true, // * Enable Format On Save
   "editor.defaultFormatter": "esbenp.prettier-vscode", // TODO: Install 'Prettier - Code formatter' before open this project
