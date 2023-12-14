@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pnpm prepare-commit-msg
+echo "hello"
