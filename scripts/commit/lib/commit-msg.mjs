@@ -31,6 +31,18 @@ const execPromises = promisify(exec);
 /**
  * @constant
  * @type {any}
+ * Execute 'git add --all' first
+ */
+const { ...git } = execPromises('git add --all');
+
+/**
+ * Log the error message of 'git add --all' command (if got an error)
+ */
+if (git.stderr) console.error(git.stderr);
+
+/**
+ * @constant
+ * @type {any}
  * @see https://npmjs.com/package/git-auto-commit-msg
  * The output of 'git-auto-commit-msg' command
  * and error message

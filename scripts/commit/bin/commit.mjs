@@ -37,7 +37,7 @@ const execPromises = promisify(exec);
  * 'git commit' command options
  */
 const commitOptions = [
-  '-m',
+  '-am',
   `"${commitMsg}"`,
 ]
 
@@ -58,7 +58,6 @@ const pushOptions = [
  * 'git' commands
  */
 const commands = [
-  'add --all',
   `commit ${commitOptions.join(' ')}`,
   `push ${pushOptions.join(' ')}`  
 ]
