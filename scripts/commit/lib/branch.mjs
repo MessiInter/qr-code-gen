@@ -32,10 +32,7 @@ const execPromises = promisify(exec);
  * @type {string[]}
  * 'git rev-parse' command options
  */
-const options = [
-  '--abbrev-ref',
-  'HEAD'
-];
+const options = ['--abbrev-ref', 'HEAD'];
 
 /**
  * @constant
@@ -43,7 +40,9 @@ const options = [
  * Output of 'git rev-parse' command (current branch name)
  * and error message
  */
-const { stdout: branch, stderr } = await execPromises(`git rev-parse ${options.join(' ')}`);
+const { stdout: branch, stderr } = await execPromises(
+  `git rev-parse ${options.join(' ')}`
+);
 
 /**
  * Log the error message of 'git rev-parse' command (if got an error)

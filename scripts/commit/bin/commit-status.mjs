@@ -4,7 +4,7 @@
 /**
  * @license
  * Copyright MessiInter All Rights Reserved.
- * 
+ *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE.md file at the root of this project
  */
@@ -36,21 +36,14 @@ const execPromises = promisify(exec);
  * @type {string[]}
  * 'git commit' command options
  */
-const commitOptions = [
-  '-am',
-  `"${commitMsg}"`,
-]
+const commitOptions = ['-am', `"${commitMsg}"`];
 
 /**
  * @constant
  * @type {string[]}
  * 'git push' command options
  */
-const pushOptions = [
-  '-u',
-  'origin',
-  branch
-];
+const pushOptions = ['-u', 'origin', branch];
 
 /**
  * @constant
@@ -59,8 +52,8 @@ const pushOptions = [
  */
 const commands = [
   `commit ${commitOptions.join(' ')}`,
-  `push ${pushOptions.join(' ')}`  
-]
+  `push ${pushOptions.join(' ')}`,
+];
 
 /**
  * @constant

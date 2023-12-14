@@ -19,7 +19,23 @@
  */
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 import { parseOutput } from './parse-output.mjs';
+
+/**
+ * @constant
+ * @type {string}
+ * Current directory path
+ */
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+/**
+ * @constant
+ * @type {string}
+ * Root directory of the project
+ */
+const root = join(__dirname, '../../..');
 
 /**
  * @constant
@@ -47,7 +63,9 @@ if (git.stderr) console.error(git.stderr);
  * The output of 'git-auto-commit-msg' command
  * and error message
  */
-const { stdout, stderr } = await execPromises('git-auto-commit-msg');
+const { stdout, stderr } = await execPromises('git-auto-commit-msg', {
+  cwd: root,
+});
 
 /**
  * Log the error message of 'git-auto-commit-msg' command (if got an error)
