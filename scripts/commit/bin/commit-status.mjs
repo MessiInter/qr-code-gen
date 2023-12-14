@@ -32,6 +32,21 @@ import branch from '../lib/branch.mjs';
 const execPromises = promisify(exec);
 
 /**
+ * Check is 'commitMsg' (commit message) is equal to 'docs: undefined'
+ */
+if (commitMsg === 'docs: undefined') {
+  /**
+   * Log the message
+   */
+  console.log("There are no changes to commit yet.");
+
+  /**
+   * Exit the process
+   */
+  process.exit(0);
+}
+
+/**
  * @constant
  * @type {string[]}
  * 'git commit' command options
