@@ -7,7 +7,7 @@
     "build": "nx build",
     "test": "nx test",
     "prepare-commit-msg": "echo \"Preparing commit message...\"",
-    "prepare": "git config core.editor true && husky install && pnpm link -g"
+    "prepare": "husky install && pnpm link -g"
   },
   "bin": {
     "commit-status": "./scripts/commit/bin/commit-status.mjs"
@@ -73,6 +73,11 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "packageManager": "pnpm@8.11.0"
 }
