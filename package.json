@@ -74,5 +74,10 @@
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --cache --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "packageManager": "pnpm@8.11.0"
 }
