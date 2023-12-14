@@ -58,5 +58,6 @@ export function parseOutput(output, regex, idx = 0) {
 
   /**
    * Return the parsed output
-   */return lines[idx];
+   */
+  return lines[idx];
 }
