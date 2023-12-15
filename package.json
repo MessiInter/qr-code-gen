@@ -70,7 +70,7 @@
     "typescript": "~5.2.2"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,cjs,mjs}": "eslint --cache --fix",
+    "*.{js,cjs,mjs,css,md}": "prettier --cache --write"
   }
 }
