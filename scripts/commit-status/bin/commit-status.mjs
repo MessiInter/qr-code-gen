@@ -35,7 +35,7 @@ const execPromises = promisify(exec);
 /**
  * Check is 'commitMsg' (commit message) is equal to 'docs: undefined'
  */
-if (commitMsg === 'docs: undefined') {
+if (commitMsg === 'Docs: undefined') {
   /**
    * Log the message
    */
