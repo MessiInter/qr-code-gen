@@ -86,4 +86,4 @@ const regex = /(\r\n|\r|\n)/g;
  * The commit message that will be used to
  * commit the changes
  */
-export const commitMsg = parseOutput(stdout, regex);
+export const commitMsg = parseOutput(stdout.charAt(0).toUpperCase(), regex);
