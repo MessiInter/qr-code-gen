@@ -38,7 +38,7 @@ if (commitMsg === 'docs: undefined') {
   /**
    * Log the message
    */
-  console.log("There are no changes to commit yet.");
+  console.log('There are no changes to commit yet.');
 
   /**
    * Exit the process
@@ -51,7 +51,7 @@ if (commitMsg === 'docs: undefined') {
  * @type {string[]}
  * 'git commit' command options
  */
-const commitOptions = ['--no-verify','-m', `"${commitMsg}"`];
+const commitOptions = ['-m', `"${commitMsg}"`];
 
 /**
  * @constant
