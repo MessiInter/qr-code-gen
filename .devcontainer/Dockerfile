@@ -12,6 +12,8 @@ RUN corepack enable && \
 
 ENV PNPM_HOME=/root/.local/share/pnpm
 
+ENV NPM_CONFIG_STORE_DIR=/root/.cache/pnpm
+
 ENV PATH=$PNPM_HOME:$WORKSPACE_DIR/node_modules/.bin:$PATH
 
 RUN pnpm add -g nx@17.1.3
