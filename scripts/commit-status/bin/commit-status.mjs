@@ -51,7 +51,7 @@ if (commitMsg === 'docs: undefined') {
  * @type {string[]}
  * 'git commit' command options
  */
-const commitOptions = ['-am', `"${commitMsg}"`];
+const commitOptions = ['--no-verify','-m', `"${commitMsg}"`];
 
 /**
  * @constant

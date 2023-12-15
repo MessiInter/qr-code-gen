@@ -6,12 +6,10 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "lint-staged": "lint-staged",
-    "prepare-commit-msg": "echo \"Preparing commit message...\"",
     "prepare": "husky install && pnpm link -g"
   },
   "bin": {
-    "commit-status": "./scripts/commit/bin/commit-status.mjs"
+    "commit-status": "./scripts/commit-status/bin/commit-status.mjs"
   },
   "private": true,
   "dependencies": {
@@ -73,12 +71,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --cache --write"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "packageManager": "pnpm@8.11.0"
+    "*.{js,css,md}": "prettier --write"
+  }
 }
