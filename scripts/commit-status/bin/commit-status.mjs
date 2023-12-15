@@ -23,6 +23,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import { commitMsg } from '../lib/commit-msg.mjs';
 import branch from '../lib/branch.mjs';
+import __root from '../lib/__root.mjs';
 
 /**
  * @constant
@@ -79,7 +80,9 @@ for (const command of commands) {
   /**
    * Execute 'git' command
    */
-  const { stdout, stderr } = await execPromises(`git ${command}`);
+  const { stdout, stderr } = await execPromises(`git ${command}`, {
+    cwd: __root,
+  });
 
   /**
    * Log the error message of 'git' command (if got an error)
