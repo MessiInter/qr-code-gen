@@ -70,7 +70,7 @@
     "typescript": "~5.2.2"
   },
   "lint-staged": {
-    "*.{js,mjs,ts}": "eslint --cache --fix",
-    "*.{js,mjs,ts,css,md}": "prettier --cache --write"
+    "*.{js,ts,cjs,cts,mjs,mts}": "nx lint --cache --fix",
+    "*.{js,ts,cjs,cts,mjs,mts,css,md}": "nx format --cache --write"
   }
 }
