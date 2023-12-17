@@ -1,1 +1,24 @@
+<header class="app-header">
+  <a href="/" aria-label="Home">
+    <mat-icon class="qr-icon">qr_code_2</mat-icon>
+    <h1>QR Code Generator</h1>
+  </a>
+</header>
+
+<br />
+
+<main>
+  <form class="app-form">
+    <mat-form-field class="form-field">
+      <mat-label>QR Data</mat-label>
+      <input
+        matInput
+        type="text"
+        placeholder="Enter QR Data here"
+        aria-label="QR Data"
+      />
+    </mat-form-field>
+  </form>
+</main>
+
 <router-outlet></router-outlet>
