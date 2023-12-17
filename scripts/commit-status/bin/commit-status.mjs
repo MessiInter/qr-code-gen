@@ -19,8 +19,8 @@
 /**
  * Import required modules
  */
-import { exec } from 'child_process';
-import { promisify } from 'util';
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
 import { commitMsg } from '../lib/commit-msg.mjs';
 import branch from '../lib/branch.mjs';
 import __root from '../lib/__root.mjs';
