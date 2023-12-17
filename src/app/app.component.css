@@ -1,0 +1,44 @@
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header {
+  background: #3f51b5;
+  padding-left: 20px;
+  overflow-y: auto;
+}
+
+.app-header * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-header a {
+  text-decoration: none;
+}
+
+.app-header a h1 {
+  color: white;
+  font-weight: 300;
+  margin: 0;
+  padding: 20px 8px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.app-header a .qr-icon {
+  color: white;
+}
+
+.app-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-field {
+  width: 100%;
+}
