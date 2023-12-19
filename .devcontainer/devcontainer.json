@@ -6,9 +6,10 @@
   "workspaceMount": "source=.,target=/workspaces/workspace,type=bind",
   "workspaceFolder": "/workspaces/workspace",
   "postCreateCommand": "pnpm install",
-  "remoteUser": "root",
-  "remoteEnv": {
-    "NODE_ENV": "development"
+  "containerUser": "root",
+  "containerEnv": {
+    "NODE_ENV": "development",
+    "CI": "0"
   },
   "forwardPorts": ["4200:4200"]
 }
