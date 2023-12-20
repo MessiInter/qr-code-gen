@@ -1,9 +1,9 @@
 {
   "editor.tabSize": 2, // * 2 spaces for JavaScript/TypeScript is now the standard
-  "editor.fontFamily": "'Fira Code'", // TODO: Install 'Fira Code' font before open this project
-  "editor.fontLigatures": true, // * Enable Font Ligatures
+  "editor.fontFamily": "Fira Code", // TODO: Install 'Fira Code' font before open this project
   "editor.formatOnSave": true, // * Enable Format On Save
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // TODO: Install 'Prettier - Code formmater' before opem this project
+  // "editor.defaultFormatter": "esbenp.prettier-vscode", // TODO: Install 'Prettier - Code formmater' before open this project
   "workbench.colorTheme": "One Dark Pro", // TODO: Install 'One Dark Pro' theme before open this project
-  "workbench.iconTheme": "material-icon-theme" // TODO: Install 'Material Icon Theme' before open this project
+  // "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "vs-seti"
 }

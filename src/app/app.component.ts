@@ -19,11 +19,14 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  initialState: { qrCodeData: string } = {
-    qrCodeData: 'https://github.com/MessiInter/qr-code-gen',
-  };
+export class AppComponent implements OnInit {
+  initialQRData: string = 'https://github.com/MessiInter/qr-code-gen';
+  QRDataForm: FormControl = new FormControl();
+  QRData: string = '' || this.initialQRData;
 
-  qrDataForm: FormControl = new FormControl();
-  qrData: string = '';
+  ngOnInit(): void {
+    this.QRDataForm.valueChanges.subscribe((value: string) => {
+      this.QRData = value || this.initialQRData;
+    });
+  }
 }

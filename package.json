@@ -76,7 +76,7 @@
   },
   "lint-staged": {
     "*.{js,ts,mjs,html}": "eslint --cache --fix",
-    "*.{js,ts,mjs,html,css,md}": "prettier --cache --write"
+    "*.{js,ts,mjs,html,css,md,json}": "prettier --cache --write"
   },
   "packageManager": "pnpm@8.11.0"
 }
