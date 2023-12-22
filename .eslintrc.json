@@ -5,7 +5,7 @@
     "sourceType": "module"
   },
   "ignorePatterns": ["!**/*"],
-  "plugins": ["@nx"],
+  "plugins": ["@nx", "simple-import-sort", "import"],
   "overrides": [
     {
       "files": ["*.ts"],
@@ -29,7 +29,12 @@
             "prefix": "qr-code-gen",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "simple-import-sort/imports": "warn",
+        "simple-import-sort/exports": "warn",
+        "import/first": "warn",
+        "import/newline-after-import": "warn",
+        "import/no-duplicates": "error"
       }
     },
     {
