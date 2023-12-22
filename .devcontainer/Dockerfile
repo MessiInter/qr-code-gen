@@ -1,14 +1,18 @@
 # syntax=docker/dockerfile:1.6.0
 # escape=\
 
-FROM cypress/base:20.9.0 AS qr_code_gen_dev_container
+FROM node:21.5.0-bullseye AS qr_code_gen_dev_container
 
 ARG WORKSPACE_DIR=/workspaces/workspace
 
 WORKDIR $WORKSPACE_DIR
 
+RUN apt update && \
+    apt install --no-install-recommends -y \
+    libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+
 RUN corepack enable && \
-    corepack prepare --activate pnpm@8.11.0
+    corepack prepare --activate pnpm@8.12.1
 
 ENV PNPM_HOME=/root/.local/share/pnpm
 

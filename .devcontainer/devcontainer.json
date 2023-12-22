@@ -8,8 +8,7 @@
   "postCreateCommand": "pnpm install",
   "containerUser": "root",
   "containerEnv": {
-    "NODE_ENV": "development",
-    "CI": "0"
+    "NODE_ENV": "development"
   },
   "forwardPorts": ["4200:4200"]
 }
