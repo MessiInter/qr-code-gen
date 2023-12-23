@@ -5,6 +5,5 @@
     "firsttris.vscode-jest-runner", // * Jest Runner
     "dbaeumer.vscode-eslint", // * ESLint
     "zhuangtongfa.Material-theme" // * One Dark Pro
-    // "PKief.material-icon-theme" // * Material Icon Theme
   ]
 }

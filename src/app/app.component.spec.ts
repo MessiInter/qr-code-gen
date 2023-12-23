@@ -21,7 +21,7 @@ describe('AppComponent', () => {
   });
 
   it('should render app', () => {
-    expect(compiled).toBeDefined();
+    expect(compiled).toBeTruthy();
   });
 
   it('should render header', () => {
@@ -29,7 +29,7 @@ describe('AppComponent', () => {
       'header.app-header'
     ) as HTMLHeadElement;
 
-    expect(header).toBeDefined();
+    expect(header).toBeTruthy();
   });
 
   it(`should have 'href' attribute in 'a' tag and equal to '/' (home)`, () => {
@@ -57,12 +57,12 @@ describe('AppComponent', () => {
 
   it('should have a line break after the title', () => {
     const br = compiled.querySelector('br') as HTMLBRElement;
-    expect(br).toBeDefined();
+    expect(br).toBeTruthy();
   });
 
   it('should render main app', () => {
     const main = compiled.querySelector('main') as HTMLElement;
-    expect(main).toBeDefined();
+    expect(main).toBeTruthy();
   });
 
   it('should render the form', () => {
@@ -70,7 +70,7 @@ describe('AppComponent', () => {
       'main form.app-form'
     ) as HTMLFormElement;
 
-    expect(form).toBeDefined();
+    expect(form).toBeTruthy();
   });
 
   it('should render the form field', () => {
@@ -78,7 +78,7 @@ describe('AppComponent', () => {
       'main form.app-form mat-form-field.form-field'
     ) as HTMLElement;
 
-    expect(formField).toBeDefined();
+    expect(formField).toBeTruthy();
   });
 
   it(`should have a label in the form field and equal to 'QR Data'`, () => {
@@ -86,5 +86,21 @@ describe('AppComponent', () => {
       'main form.app-form mat-form-field.form-field mat-label'
     )?.textContent as string;
     expect(label).toEqual('QR Data');
+  });
+
+  it('should render the input', () => {
+    const input = compiled.querySelector(
+      'main form.app-form mat-form-field.form-field input'
+    ) as HTMLInputElement;
+
+    expect(input).toBeTruthy();
+  });
+
+  it(`should have 'matInput' attribute in the input`, () => {
+    const input = compiled.querySelector(
+      'main form.app-form mat-form-field.form-field input'
+    ) as HTMLInputElement;
+
+    expect(input.getAttribute('matInput')).toBe('');
   });
 });
