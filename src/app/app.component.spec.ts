@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let compiled: HTMLElement;
-  let appComponent: AppComponent;
+  // let appComponent: AppComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     compiled = fixture.nativeElement;
-    appComponent = new AppComponent();
+    // appComponent = new AppComponent();
   });
 
   it('should render app', () => {
@@ -32,26 +32,38 @@ describe('AppComponent', () => {
     expect(header).toBeTruthy();
   });
 
+  it('should render home link', () => {
+    const link = compiled.querySelector(
+      'header.app-header a'
+    ) as HTMLAnchorElement;
+    expect(link).toBeTruthy();
+  });
+
   it(`should have 'href' attribute in 'a' tag and equal to '/' (home)`, () => {
-    const link = compiled.querySelector('header a') as HTMLElement;
+    const link = compiled.querySelector(
+      'header.app-header a'
+    ) as HTMLAnchorElement;
     expect(link.getAttribute('href')).toEqual('/');
   });
 
   it(`should have 'aria-label' attribute in 'a' tag and equal to 'Home'`, () => {
-    const link = compiled.querySelector('header a') as HTMLElement;
+    const link = compiled.querySelector(
+      'header.app-header a'
+    ) as HTMLAnchorElement;
     expect(link.getAttribute('aria-label')).toEqual('Home');
   });
 
   it('should render QR Code icon', () => {
     const matIcon = compiled.querySelector(
-      'header a mat-icon.qr-icon'
+      'header.app-header a mat-icon.qr-icon'
     ) as HTMLElement;
 
     expect(matIcon?.textContent).toEqual('qr_code_2');
   });
 
   it(`should render title 'QR Code Generator'`, () => {
-    const title = compiled.querySelector('header a h1')?.textContent as string;
+    const title = compiled.querySelector('header.app-header a h1')
+      ?.textContent as string;
     expect(title).toEqual('QR Code Generator');
   });
 

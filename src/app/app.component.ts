@@ -3,6 +3,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { SafeUrl } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 @Component({

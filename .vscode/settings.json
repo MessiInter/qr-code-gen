@@ -5,5 +5,5 @@
   "explorer.compactFolders": false, // * Disable compact folders
   "workbench.colorTheme": "One Dark Pro", // TODO: Install One Dark Pro theme before open this project
   "workbench.iconTheme": "vs-seti", // * VS Seti is the default icon theme in VS Code
-  "editor.fontLigatures": true
+  "editor.fontLigatures": true // * Enable Font Ligatures
 }

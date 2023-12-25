@@ -12,19 +12,21 @@
     "QR Code",
     "QR Code Generator",
     "qr-code-gen",
-    "angular",
+    "Angular",
     "nx"
   ],
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "build:watch": "nx build qr-code-gen --watch --configuration development",
+    "build:watch": "nx build --watch --configuration=development",
     "test": "nx test",
+    "test:watch": "nx test --watchAll",
     "e2e": "nx e2e e2e",
-    "lint": "eslint --report-unused-disable-directives .",
-    "lint:fix": "eslint --cache --fix .",
+    "e2e:watch": "nx e2e e2e --watch",
+    "lint": "nx lint --reportUnusedDisableDirectives",
+    "lint:fix": "nx lint --cache --fix",
     "format": "prettier --check .",
-    "format:code": "prettier --cache --write .",
+    "format:code": "nx format:write --all",
     "postinstall": "husky install && pnpm link -g"
   },
   "repository": {
