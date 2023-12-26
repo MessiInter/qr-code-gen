@@ -3,9 +3,8 @@
   "build": {
     "dockerfile": "./Dockerfile"
   },
-  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/workspace,type=bind",
+  "workspaceMount": "source=..,target=/workspaces/workspace,type=bind",
   "workspaceFolder": "/workspaces/workspace",
-  "localWorkspaceFolder": "..",
   "postCreateCommand": "pnpm install",
   "containerUser": "root",
   "containerEnv": {
