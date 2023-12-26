@@ -4,7 +4,7 @@
   "private": true,
   "description": "QR Code Generator is a project that can quickly generate QR Code for general purposes uses",
   "bin": {
-    "commit-status": "bin/commit-status.mjs"
+    "commit-status": "./bin/commit-status.mjs"
   },
   "keywords": [
     "QR",
@@ -38,7 +38,15 @@
     "npm": "Please use pnpm instead of npm to install dependencies",
     "yarn": "Please use pnpm instead of yarn to install dependencies"
   },
-  "author": "MessiInter",
+  "resolutions": {
+    "node": ">=21.5.0",
+    "yarn": "Please use pnpm instead of yarn to install dependencies"
+  },
+  "author": {
+    "name": "MessiInter",
+    "email": "messivsinter@gmail.com",
+    "url": "https://github.com/MessiInter"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MessiInter/qr-code-gen/issues"
