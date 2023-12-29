@@ -1,7 +1,5 @@
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 .app-header {
@@ -26,11 +24,16 @@ main {
   margin: 0;
   padding: 20px 8px;
   font-size: 20px;
-  text-align: center;
 }
 
 .app-header a .qr-icon {
   color: white;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .app-form {
@@ -41,4 +44,42 @@ main {
 
 .form-field {
   width: 100%;
+}
+
+.qrcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.widthHeight-label {
+  margin-right: 5px;
+}
+
+.widthHeight-input {
+  margin-left: 5px;
+}
+
+.widthHeight-px-label {
+  margin-left: 5px;
+}
+
+section * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.format-label {
+  margin-right: 5px;
+}
+
+.format-toggle-btn {
+  margin-left: 5px;
+}
+
+.options-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
