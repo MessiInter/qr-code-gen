@@ -4,10 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  node: '>=21.5.0'
-  yarn: Please use pnpm instead of yarn to install dependencies
-
 dependencies:
   '@angular/animations':
     specifier: ~17.0.0

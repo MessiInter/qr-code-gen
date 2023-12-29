@@ -24,7 +24,7 @@
     "e2e": "nx e2e e2e",
     "e2e:watch": "nx e2e e2e --watch",
     "lint": "nx lint --reportUnusedDisableDirectives",
-    "lint:fix": "nx lint --cache --fix",
+    "lint:code": "nx lint --cache --fix",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
     "postinstall": "husky install && pnpm link -g"
@@ -36,10 +36,6 @@
   "engines": {
     "node": ">=21.5.0",
     "npm": "Please use pnpm instead of npm to install dependencies",
-    "yarn": "Please use pnpm instead of yarn to install dependencies"
-  },
-  "resolutions": {
-    "node": ">=21.5.0",
     "yarn": "Please use pnpm instead of yarn to install dependencies"
   },
   "author": {

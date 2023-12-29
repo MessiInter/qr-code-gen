@@ -8,18 +8,115 @@
 <br />
 
 <main>
-  <form class="app-form">
-    <mat-form-field class="form-field">
-      <mat-label>QR Data</mat-label>
-      <input
-        matInput
-        type="text"
-        [placeholder]="initialQRData"
-        aria-label="QR Data"
-        [formControl]="QRDataForm"
-      />
-    </mat-form-field>
-  </form>
+  <div class="qrcode">
+    <qrcode
+      #parent
+      [alt]="QRCodeOptions.alt"
+      [ariaLabel]="QRCodeOptions.ariaLabel"
+      [qrdata]="QRData"
+      [elementType]="elementType"
+      [imageWidth]="widthHeight"
+      [imageHeight]="widthHeight"
+      [width]="widthHeight"
+      [margin]="QRCodeOptions.margin"
+      (qrCodeURL)="onURLChange($event)"
+    ></qrcode>
+  </div>
+
+  <br />
+  <mat-divider></mat-divider>
+  <br />
+
+  <div class="download-btn">
+    @if (elementType !== 'svg') {
+    <button
+      mat-fab
+      color="primary"
+      (click)="imgService.saveAsImage(parent, elementType)"
+    >
+      <mat-icon>file_download</mat-icon>
+    </button>
+    } @else {
+    <a
+      mat-fab
+      color="primary"
+      [href]="QRCodeURL"
+      target="_self"
+      download="qrcode"
+    >
+      <mat-icon>file_download</mat-icon>
+    </a>
+    }
+  </div>
+
+  <br />
+  <mat-divider></mat-divider>
+  <br />
+
+  <mat-checkbox
+    class="options-checkbox"
+    [checked]="showAdvancedOptions"
+    (change)="onCheckboxChange($event.checked)"
+    >Show Advanced Options</mat-checkbox
+  >
+
+  <div class="form-container">
+    <form class="app-form">
+      @if (showAdvancedOptions) {
+      <section>
+        <h3>Options</h3>
+        <div class="widthHeight">
+          <label for="widthHeight" class="widthHeight-label"
+            >Width & Height</label
+          >
+
+          <mat-slider min="100" max="200" value="100">
+            <input
+              #widthHeightInput
+              matSliderThumb
+              class="widthHeight-input"
+              name="widthHeight"
+              [formControl]="widthHeightForm"
+            />
+          </mat-slider>
+
+          <label for="widthHeight-input" class="widthHeight-px-label">
+            {{ widthHeight + 'px' }}
+          </label>
+        </div>
+
+        <div class="format-btn">
+          <p class="format-label">Format:</p>
+          <mat-button-toggle-group
+            class="format-toggle-btn"
+            name="elementType"
+            aria-label="Format (elementType)"
+            selected="elementType"
+            [(ngModel)]="elementType"
+          >
+            <mat-button-toggle value="img">img (Default)</mat-button-toggle>
+            <mat-button-toggle value="svg">svg</mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </section>
+      }
+
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+
+      <mat-form-field class="form-field">
+        <mat-label>QR Data</mat-label>
+        <input
+          matInput
+          type="text"
+          [placeholder]="QRCodeOptions.initialQRData"
+          aria-label="QR Data"
+          [formControl]="QRDataForm"
+        />
+      </mat-form-field>
+    </form>
+  </div>
 </main>
 
 <router-outlet></router-outlet>
