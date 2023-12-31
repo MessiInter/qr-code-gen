@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  inject,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
@@ -43,11 +37,9 @@ import { ElementType } from './types/element-type';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  @ViewChild('widthHeightInput') widthHeightInput: ElementRef;
-
   imgService: ImgService = inject(ImgService);
 
-  QRCodeOptions: QROptions = {
+  qrCodeOptions: QROptions = {
     alt: 'QR Code',
     ariaLabel: 'QR Code',
     initialQRData: 'https://github.com/MessiInter/qr-code-gen',
@@ -55,16 +47,18 @@ export class AppComponent implements OnInit {
     margin: 1,
   };
 
-  QRDataForm: FormControl = new FormControl();
+  qrDataForm: FormControl = new FormControl();
+  qrData: string = this.qrCodeOptions.initialQRData;
+  qrCodeUrl: SafeUrl = '';
+
   widthHeightForm: FormControl = new FormControl();
-  QRData: string = this.QRCodeOptions.initialQRData;
-  QRCodeURL: SafeUrl = '';
-  widthHeight: number = this.QRCodeOptions.initialWidthHeight;
+  widthHeight: number = this.qrCodeOptions.initialWidthHeight;
+
   elementType: ElementType = 'img';
   showAdvancedOptions: boolean = false;
 
-  onURLChange(url: SafeUrl): void {
-    this.QRCodeURL = url;
+  onUrlChange(url: SafeUrl): void {
+    this.qrCodeUrl = url;
   }
 
   onCheckboxChange(checked: boolean): void {
@@ -72,13 +66,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    [this.QRDataForm, this.widthHeightForm].forEach((form: FormControl) => {
+    [this.qrDataForm, this.widthHeightForm].forEach((form: FormControl) => {
       form.valueChanges.subscribe((val: string) => {
-        if (form === this.QRDataForm) {
-          this.QRData = val || this.QRCodeOptions.initialQRData;
+        if (form === this.qrDataForm) {
+          this.qrData = val || this.qrCodeOptions.initialQRData;
         } else {
           this.widthHeight =
-            Number(val) || this.QRCodeOptions.initialWidthHeight;
+            Number(val) || this.qrCodeOptions.initialWidthHeight;
         }
       });
     });

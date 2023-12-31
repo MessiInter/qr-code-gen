@@ -11,15 +11,15 @@
   <div class="qrcode">
     <qrcode
       #parent
-      [alt]="QRCodeOptions.alt"
-      [ariaLabel]="QRCodeOptions.ariaLabel"
-      [qrdata]="QRData"
+      [alt]="qrCodeOptions.alt"
+      [ariaLabel]="qrCodeOptions.ariaLabel"
+      [qrdata]="qrData"
       [elementType]="elementType"
       [imageWidth]="widthHeight"
       [imageHeight]="widthHeight"
       [width]="widthHeight"
-      [margin]="QRCodeOptions.margin"
-      (qrCodeURL)="onURLChange($event)"
+      [margin]="qrCodeOptions.margin"
+      (qrCodeURL)="onUrlChange($event)"
     ></qrcode>
   </div>
 
@@ -40,9 +40,9 @@
     <a
       mat-fab
       color="primary"
-      [href]="QRCodeURL"
+      [href]="qrCodeUrl"
       target="_self"
-      download="qrcode"
+      download="QR_Code_SVG"
     >
       <mat-icon>file_download</mat-icon>
     </a>
@@ -72,7 +72,6 @@
 
           <mat-slider min="100" max="200" value="100">
             <input
-              #widthHeightInput
               matSliderThumb
               class="widthHeight-input"
               name="widthHeight"
@@ -110,9 +109,9 @@
         <input
           matInput
           type="text"
-          [placeholder]="QRCodeOptions.initialQRData"
+          [placeholder]="qrCodeOptions.initialQRData"
           aria-label="QR Data"
-          [formControl]="QRDataForm"
+          [formControl]="qrDataForm"
         />
       </mat-form-field>
     </form>
