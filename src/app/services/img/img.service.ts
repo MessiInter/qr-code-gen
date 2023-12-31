@@ -2,13 +2,15 @@ import { inject, Injectable } from '@angular/core';
 
 import { QRCElement } from '../../interfaces/qrc-element';
 import { ElementType } from '../../types/element-type';
+import { FileService } from '../file/file.service';
 import { UrlService } from '../url/url.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ImgService {
-  urlService: UrlService = inject(UrlService);
+  private fileService: FileService = inject(FileService);
+  private urlService: UrlService = inject(UrlService);
 
   saveAsImage(parent: QRCElement, elementType: ElementType): void {
     let parentElement: null | string = null;
@@ -42,7 +44,7 @@ export class ImgService {
 
       link.href = url;
       link.target = '_self';
-      link.download = 'qrcode';
+      link.download = this.fileService.generateFilename();
 
       link.click();
     }

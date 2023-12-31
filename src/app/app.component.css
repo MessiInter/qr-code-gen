@@ -2,23 +2,23 @@ main {
   text-align: center;
 }
 
-.app-header {
+header.app-header {
   background: #3f51b5;
   padding-left: 20px;
   overflow-y: auto;
 }
 
-.app-header * {
+header.app-header * {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.app-header a {
+header.app-header a {
   text-decoration: none;
 }
 
-.app-header a h1 {
+header.app-header a h1 {
   color: white;
   font-weight: 300;
   margin: 0;
@@ -26,59 +26,80 @@ main {
   font-size: 20px;
 }
 
-.app-header a .qr-icon {
+header.app-header a mat-icon.qr-icon {
   color: white;
 }
 
-.form-container {
+main .form-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.app-form {
+main .form-container form.app-form {
   min-width: 150px;
   max-width: 500px;
   width: 100%;
 }
 
-.form-field {
+main .form-container form.app-form mat-form-field.form-field {
   width: 100%;
 }
 
-.qrcode {
+main .qrcode {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.widthHeight-label {
+main
+  .form-container
+  form.app-form
+  section
+  .widthHeight
+  label.widthHeight-label {
   margin-right: 5px;
 }
 
-.widthHeight-input {
+main
+  .form-container
+  form.app-form
+  section
+  .widthHeight
+  mat-slider
+  input.widthHeight-input {
   margin-left: 5px;
 }
 
-.widthHeight-px-label {
+main
+  .form-container
+  form.app-form
+  section
+  .widthHeight
+  label.widthHeight-px-label {
   margin-left: 5px;
 }
 
-section * {
+main .form-container form.app-form section * {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.format-label {
+main .form-container form.app-form section .format-btn p.format-label {
   margin-right: 5px;
 }
 
-.format-toggle-btn {
+main
+  .form-container
+  form.app-form
+  section
+  .format-btn
+  mat-button-toggle-group.format-toggle-btn {
   margin-left: 5px;
 }
 
-.options-checkbox {
+main mat-checkbox.options-checkbox {
   display: flex;
   align-items: center;
   justify-content: center;

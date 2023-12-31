@@ -23,7 +23,7 @@
     "test:watch": "nx test --watchAll",
     "e2e": "nx e2e e2e",
     "e2e:watch": "nx e2e e2e --watch",
-    "lint": "nx lint --reportUnusedDisableDirectives",
+    "lint": "nx lint --reportUnusedDisableDirectives=warn",
     "lint:code": "nx lint --cache --fix",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
