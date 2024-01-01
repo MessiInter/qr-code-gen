@@ -17,6 +17,17 @@
  */
 
 /**
+ * Check the OS is Windows or not
+ * If it is, throw an error
+ *
+ * @throws {Error}
+ */
+if (process.platform === 'win32')
+  throw new Error(
+    'commit-status tool is not supported on Windows! Sorry for inconvenience!'
+  );
+
+/**
  * Import required modules
  */
 import { exec } from 'node:child_process';

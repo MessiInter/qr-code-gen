@@ -65,21 +65,21 @@
       @if (showAdvancedOptions) {
       <section>
         <h3>Options</h3>
-        <div class="widthHeight">
-          <label for="widthHeight" class="widthHeight-label"
+        <div class="width-height">
+          <label for="widthHeight" class="width-height-label"
             >Width & Height</label
           >
 
           <mat-slider min="100" max="200" value="100">
             <input
               matSliderThumb
-              class="widthHeight-input"
+              class="width-height-input"
               name="widthHeight"
               [formControl]="widthHeightForm"
             />
           </mat-slider>
 
-          <label for="widthHeight-input" class="widthHeight-px-label">
+          <label for="widthHeight" class="width-height-px-label">
             {{ widthHeight + 'px' }}
           </label>
         </div>
