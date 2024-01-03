@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1.6.0
 # escape=\
 
-FROM node:21.5.0-bullseye AS qr_code_gen_dev_container
+FROM node:20.10.0-bullseye AS qr_code_gen_dev_container
 
 ARG WORKSPACE_DIR=/workspaces/workspace
 
@@ -12,7 +12,7 @@ RUN apt update && \
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
 RUN corepack enable && \
-    corepack prepare --activate pnpm@8.13.1
+    corepack prepare --activate pnpm@8.14.0
 
 ENV PNPM_HOME=/root/.local/share/pnpm
 

@@ -44,7 +44,7 @@
     "url": "https://github.com/MessiInter/qr-code-gen.git"
   },
   "engines": {
-    "node": ">=18.13.0",
+    "node": ">=20.10.0",
     "npm": "Please use pnpm instead of npm to install dependencies",
     "yarn": "Please use pnpm instead of yarn to install dependencies"
   },
@@ -132,10 +132,5 @@
     "ts-node": "10.9.1",
     "typescript": "~5.2.2"
   },
-  "packageManager": "pnpm@8.13.1",
-  "lint-staged": {
-    "*.css": "stylelint --allow-empty-input --cache --fix",
-    "*.{js,ts,mjs,html}": "eslint --cache --fix",
-    "*.{js,ts,mjs,html,css,md,json}": "prettier --cache --write"
-  }
+  "packageManager": "pnpm@8.14.0"
 }
