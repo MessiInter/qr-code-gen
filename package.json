@@ -35,6 +35,7 @@
     "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
+    "deploy": "git add -f dist/qr-code-gen/browser && git commit -m \"Update page #$$\" && git push -u origin gh-pages && git subtree push --prefix dist/qr-code-gen/browser origin gh-pages",
     "predeploy": "nx build --baseHref=\"/qr-code-gen/\"",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
