@@ -35,7 +35,8 @@
     "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
-    "predeploy": "pnpm build",
+    "deploy": "pnpm predeploy && git subtree push --prefix dist/qr-code-gen/browser origin gh-pages",
+    "predeploy": "nx build --baseHref=/qr-code-gen/",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
   "repository": {
@@ -61,7 +62,7 @@
     "url": "https://github.com/MessiInter/qr-code-gen/issues",
     "email": "messivsinter@gmail.com"
   },
-  "homepage": "https://github.com/MessiInter/qr-code-gen",
+  "homepage": "https://messiinter.github.io/qr-code-gen",
   "dependencies": {
     "@angular/animations": "~17.0.0",
     "@angular/cdk": "^17.0.2",
