@@ -1,6 +1,6 @@
 {
   "name": "@qr-code-gen/source",
-  "version": "0.0.0-next.0",
+  "version": "0.0.0",
   "private": true,
   "description": "QR Code Generator is a application that can quickly generate QR Code for general purposes uses",
   "bin": {
@@ -43,7 +43,7 @@
     "url": "https://github.com/MessiInter/qr-code-gen.git"
   },
   "engines": {
-    "node": ">=18.13.0",
+    "node": ">=21.5.0",
     "npm": "Please use pnpm instead of npm to install dependencies",
     "yarn": "Please use pnpm instead of yarn to install dependencies"
   },
