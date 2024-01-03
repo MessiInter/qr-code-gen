@@ -1,3 +1,0 @@
-[build]
-  publish = './dist/qr-code-gen/browser/'
-  command = 'pnpm predeploy'
