@@ -35,7 +35,7 @@
     "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
-    "predeploy": "pnpm build",
+    "predeploy": "nx build --baseHref=\"/qr-code-gen/\"",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
   "repository": {
