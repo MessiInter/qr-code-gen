@@ -1,4 +1,4 @@
-# QrCodeGen
+# QR Code Generator
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
@@ -36,7 +36,7 @@ nx run-many -t <target1> <target2>
 nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
-Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
+Targets can be defined in the `package.json` or `project.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
 
 ## Want better Editor Integration?
 
@@ -44,7 +44,7 @@ Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provid
 
 ## Ready to deploy?
 
-Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
+Just run `nx build` to build the application. The build artifacts will be stored in the `dist/qr-code-gen` directory, ready to be deployed.
 
 ## Set up CI!
 

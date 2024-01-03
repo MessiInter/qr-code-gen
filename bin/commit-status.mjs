@@ -3,7 +3,7 @@
 
 /**
  * @license
- * Copyright MessiInter All Rights Reserved.
+ * Copyright MessiInter and contributors All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE.md file at the root of this project
@@ -24,7 +24,7 @@
  */
 if (process.platform === 'win32')
   throw new Error(
-    'commit-status tool is not supported on Windows! Sorry for inconvenience!'
+    'commit-status is not supported on Windows! Sorry for inconvenience!'
   );
 
 /**

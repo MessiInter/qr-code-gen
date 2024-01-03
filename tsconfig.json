@@ -21,8 +21,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "strictPropertyInitialization": false
+    "noFallthroughCasesInSwitch": true
   },
   "files": [],
   "include": [],
