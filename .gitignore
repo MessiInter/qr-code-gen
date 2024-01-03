@@ -41,4 +41,5 @@ Thumbs.db
 .nx/cache
 .angular
 .eslintcache
+.stylelintcache
 v8-compile-cache-0

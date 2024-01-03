@@ -14,8 +14,11 @@ describe('AppComponent', () => {
   it('should render', () => {
     const fixture: ComponentFixture<AppComponent> =
       TestBed.createComponent(AppComponent);
+
     fixture.detectChanges();
+
     const compiled = fixture.nativeElement as HTMLElement;
+
     expect(compiled.querySelector('main')).toBeTruthy();
   });
 });

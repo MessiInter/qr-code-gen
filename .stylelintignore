@@ -1,0 +1,5 @@
+/dist
+/coverage
+/.nx/cache
+.angular
+node_modules

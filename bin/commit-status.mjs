@@ -3,7 +3,7 @@
 
 /**
  * @license
- * Copyright MessiInter All Rights Reserved.
+ * Copyright MessiInter and contributors All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE.md file at the root of this project
@@ -15,6 +15,17 @@
  * with the message exported from '../lib/commit-msg.mjs' file
  * to the current branch (exported from '../lib/branch.mjs' file)
  */
+
+/**
+ * Check the OS is Windows or not
+ * If it is, throw an error
+ *
+ * @throws {Error}
+ */
+if (process.platform === 'win32')
+  throw new Error(
+    'commit-status is not supported on Windows! Sorry for inconvenience!'
+  );
 
 /**
  * Import required modules

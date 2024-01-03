@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-recommended"],
+  "plugins": ["stylelint-order"],
+
+  "rules": {
+    "unit-allowed-list": ["px", "%"],
+    "order/properties-alphabetical-order": true
+  }
+}

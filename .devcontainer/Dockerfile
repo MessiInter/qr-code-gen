@@ -12,7 +12,7 @@ RUN apt update && \
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
 RUN corepack enable && \
-    corepack prepare --activate pnpm@8.12.1
+    corepack prepare --activate pnpm@8.13.1
 
 ENV PNPM_HOME=/root/.local/share/pnpm
 
