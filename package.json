@@ -19,8 +19,8 @@
     "start": "nx serve",
     "start:static": "nx serve-static",
     "start:express": "node ./dist/qr-code-gen/server/server.mjs",
-    "build": "nx build",
-    "build:watch": "nx build --watch --configuration=development",
+    "build": "nx build --sourceMap",
+    "build:watch": "nx build --watch --configuration=development --sourceMap",
     "test": "nx test",
     "test:watch": "nx test --watchAll",
     "e2e": "nx e2e e2e",
@@ -36,7 +36,7 @@
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy && git subtree push --prefix dist/qr-code-gen/browser origin gh-pages",
-    "predeploy": "nx build --baseHref=/qr-code-gen/",
+    "predeploy": "nx build --sourceMap --baseHref=/qr-code-gen/",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
   "repository": {
