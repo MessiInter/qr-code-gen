@@ -35,7 +35,7 @@
     "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
     "format": "prettier --check .",
     "format:code": "nx format:write --all",
-    "deploy": "pnpm predeploy && echo \"To deploy, switch to the 'gh-pages' branch. After that, add the 'docs' folder and run 'commit-status' to commit and push the changes. The 'docs' folder will be used to deploy using GitHub Pages.\"",
+    "deploy": "pnpm predeploy && echo \"To deploy, switch to the 'gh-pages' branch. After that, add the 'docs' folder and run 'commit-status' to commit and push all the changes. The 'docs' folder will be uses to deploy using GitHub Pages.\"",
     "predeploy": "nx build --sourceMap --baseHref=\"/qr-code-gen/\" --outputPath=\"./docs\" && mv ./docs/browser/* ./docs && touch ./docs/browser/.gitkeep",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
