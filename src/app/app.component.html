@@ -1,9 +1,4 @@
-<header class="app-header">
-  <a href="/" aria-label="Home">
-    <mat-icon class="qr-icon">qr_code_2</mat-icon>
-    <h1>QR Code Generator</h1>
-  </a>
-</header>
+<qr-code-gen-header></qr-code-gen-header>
 
 <br />
 
@@ -28,6 +23,7 @@
   <br />
 
   <div class="download-btn">
+    <!-- prettier-ignore-start -->
     @if (elementType !== 'svg') {
     <button
       mat-fab
@@ -42,11 +38,12 @@
       color="primary"
       [href]="qrCodeUrl"
       target="_self"
-      download="QR_Code_SVG"
+      [download]="filename"
     >
       <mat-icon>file_download</mat-icon>
     </a>
     }
+    <!-- prettier-ignore-end -->
   </div>
 
   <br />

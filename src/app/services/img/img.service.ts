@@ -9,8 +9,8 @@ import { UrlService } from '../url/url.service';
   providedIn: 'root',
 })
 export class ImgService {
-  private fileService: FileService = inject(FileService);
-  private urlService: UrlService = inject(UrlService);
+  private readonly fileService: FileService = inject(FileService);
+  private readonly urlService: UrlService = inject(UrlService);
 
   saveAsImage(parent: QRCElement, elementType: ElementType): void {
     let parentElement: null | string = null;
@@ -29,7 +29,7 @@ export class ImgService {
       parentElement = parent.qrcElement.nativeElement.querySelector('img').src;
     } else {
       alert(
-        'Please set the element type (format) to img!'
+        'Error: Please set the element type (format) to img!'
       ); /* Use for debugging */
     }
 
