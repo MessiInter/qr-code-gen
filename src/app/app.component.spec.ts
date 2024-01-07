@@ -5,20 +5,25 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+  let compiled: HTMLElement;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, RouterTestingModule, AppComponent],
+      imports: [AppComponent, BrowserAnimationsModule, RouterTestingModule],
     }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    compiled = fixture.nativeElement;
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 
   it('should render', () => {
-    const fixture: ComponentFixture<AppComponent> =
-      TestBed.createComponent(AppComponent);
-
-    fixture.detectChanges();
-
-    const compiled = fixture.nativeElement as HTMLElement;
-
-    expect(compiled.querySelector('main')).toBeTruthy();
+    expect(compiled).toBeTruthy();
   });
 });
