@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { nanoid } from 'nanoid';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,8 @@ export class FileService {
     const rand: string = Math.floor(
       Math.random() * (999999 - 100000 + 1) + 100000
     ).toString();
+    const id: string = nanoid(6);
 
-    return `QR_Code_${year}${month}${day}_${hours}${mins}${secs}_${rand}`;
+    return `QR_Code_${year}${month}${day}_${hours}${mins}${secs}_${rand}_${id}`;
   }
 }

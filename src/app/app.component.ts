@@ -11,7 +11,9 @@ import { MatSliderModule } from '@angular/material/slider';
 import { SafeUrl } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { QRCodeModule } from 'angularx-qrcode';
+import { nanoid } from 'nanoid';
 
+import { HeaderComponent } from './components/header/header.component';
 import { QROptions } from './interfaces/qr-options';
 import { ImgService } from './services/img/img.service';
 import { ElementType } from './types/element-type';
@@ -31,15 +33,16 @@ import { ElementType } from './types/element-type';
     MatSliderModule,
     RouterModule,
     QRCodeModule,
+    HeaderComponent,
   ],
   selector: 'qr-code-gen-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  imgService: ImgService = inject(ImgService);
+  readonly imgService: ImgService = inject(ImgService);
 
-  qrCodeOptions: QROptions = {
+  readonly qrCodeOptions: QROptions = {
     alt: 'QR Code',
     ariaLabel: 'QR Code',
     initialQRData: 'https://github.com/MessiInter/qr-code-gen',
@@ -47,14 +50,15 @@ export class AppComponent implements OnInit {
     margin: 1,
   };
 
-  qrDataForm: FormControl = new FormControl();
+  readonly qrDataForm: FormControl = new FormControl('');
   qrData: string = this.qrCodeOptions.initialQRData;
   qrCodeUrl: SafeUrl = '';
 
-  widthHeightForm: FormControl = new FormControl();
+  readonly widthHeightForm: FormControl = new FormControl('');
   widthHeight: number = this.qrCodeOptions.initialWidthHeight;
 
   elementType: ElementType = 'img';
+  filename: string = `QR_Code_SVG_${nanoid(6)}`;
   showAdvancedOptions: boolean = false;
 
   onUrlChange(url: SafeUrl): void {
@@ -70,6 +74,7 @@ export class AppComponent implements OnInit {
       form.valueChanges.subscribe((val: string) => {
         if (form === this.qrDataForm) {
           this.qrData = val || this.qrCodeOptions.initialQRData;
+          this.filename = `QR_Code_SVG_${nanoid(6)}`;
         } else {
           this.widthHeight =
             Number(val) || this.qrCodeOptions.initialWidthHeight;
