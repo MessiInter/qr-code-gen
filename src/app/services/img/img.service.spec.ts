@@ -10,7 +10,7 @@ describe('ImgService', () => {
     service = TestBed.inject(ImgService);
   });
 
-  it('should be created', () => {
+  it('img service should be created', () => {
     expect(service).toBeTruthy();
   });
 });
