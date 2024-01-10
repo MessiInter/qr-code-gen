@@ -16,13 +16,7 @@
     },
     {
       "files": ["*.cy.{ts,js,tsx,jsx}", "src/**/*.{ts,js,tsx,jsx}"],
-      "rules": {
-        "simple-import-sort/imports": "warn",
-        "simple-import-sort/exports": "warn",
-        "import/first": "warn",
-        "import/newline-after-import": "warn",
-        "import/no-duplicates": "error"
-      }
+      "rules": {}
     },
     {
       "files": ["*.js", "*.jsx"],
@@ -30,5 +24,5 @@
       "rules": {}
     }
   ],
-  "plugins": ["@nx", "simple-import-sort", "import"]
+  "plugins": ["@nx"]
 }

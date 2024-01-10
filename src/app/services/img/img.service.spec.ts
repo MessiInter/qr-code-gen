@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import { TestBed } from '@angular/core/testing';
 
 import { ImgService } from './img.service';
