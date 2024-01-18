@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { nanoid } from 'nanoid';
+import {Injectable} from '@angular/core';
+import {nanoid} from 'nanoid';
 
 @Injectable({
   providedIn: 'root',

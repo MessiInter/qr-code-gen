@@ -5,14 +5,16 @@
     "sourceType": "module"
   },
   "ignorePatterns": ["!**/*"],
-  "plugins": ["@nx", "simple-import-sort", "import"],
+  "plugins": ["@nx"],
   "overrides": [
     {
       "files": ["*.ts"],
       "extends": [
+        "./node_modules/gts",
         "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
+      "plugins": ["simple-import-sort", "import", "node"],
       "rules": {
         "@angular-eslint/directive-selector": [
           "warn",
@@ -34,7 +36,13 @@
         "simple-import-sort/exports": "warn",
         "import/first": "warn",
         "import/newline-after-import": "warn",
-        "import/no-duplicates": "error"
+        "import/no-duplicates": "error",
+        "node/no-unpublished-import": [
+          "error",
+          {
+            "allowModules": ["@nuintun/qrcode", "@nx/cypress", "cypress"]
+          }
+        ]
       }
     },
     {

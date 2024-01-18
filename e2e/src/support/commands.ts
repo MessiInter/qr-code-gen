@@ -15,6 +15,8 @@ declare namespace Cypress {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface Chainable<Subject> {
     // login(email: string, password: string): void;
+    getFiles(dir: string, pattern?: string): string[];
+    checkFiles(dir: string, pattern?: string): void;
   }
 }
 //
@@ -22,6 +24,29 @@ declare namespace Cypress {
 // Cypress.Commands.add('login', (email, password) => {
 //   console.log('Custom command example: Login', email, password);
 // });
+Cypress.Commands.add('getFiles', (dir, pattern = '*') => {
+  let files: string[] = [];
+
+  cy.exec(`ls --color=never ${dir}/${pattern}`).then(
+    ({stdout}: {stdout: string}) => {
+      files = stdout.split(/\r\n|\n|\r/g);
+    }
+  );
+  return files;
+});
+
+Cypress.Commands.add('checkFiles', (dir, pattern = '*') => {
+  let files: string[] = [];
+
+  cy.exec(`ls --color=never ${dir}/${pattern}`).then(
+    ({stdout}: {stdout: string}) => {
+      files = stdout.split(/\r\n|\n|\r/g);
+    }
+  );
+  files.forEach((file: string) =>
+    cy.readFile(`${dir}/${file}`).should('exist')
+  );
+});
 //
 // -- This is a child command --
 // Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })

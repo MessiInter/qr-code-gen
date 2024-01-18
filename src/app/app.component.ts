@@ -1,22 +1,22 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatSliderModule } from '@angular/material/slider';
-import { SafeUrl } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { QRCodeModule } from 'angularx-qrcode';
-import { nanoid } from 'nanoid';
+import {Component, inject, OnInit} from '@angular/core';
+import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
+import {SafeUrl} from '@angular/platform-browser';
+import {RouterModule} from '@angular/router';
+import {QRCodeModule} from 'angularx-qrcode';
+import {nanoid} from 'nanoid';
 
-import { HeaderComponent } from './components/header/header.component';
-import { QROptions } from './interfaces/qr-options';
-import { ImgService } from './services/img/img.service';
-import { ElementType } from './types/element-type';
+import {HeaderComponent} from './components/header/header.component';
+import {QROptions} from './interfaces/qr-options';
+import {ImgService} from './services/img/img.service';
+import {ElementType} from './types/element-type';
 
 @Component({
   standalone: true,

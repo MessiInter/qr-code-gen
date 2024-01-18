@@ -2,9 +2,9 @@
  * @jest-environment jsdom
  */
 
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ImgService } from './img.service';
+import {ImgService} from './img.service';
 
 describe('ImgService', () => {
   let service: ImgService;
