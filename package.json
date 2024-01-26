@@ -27,11 +27,11 @@
     "e2e:watch": "nodemon -x \"clear && pnpm e2e\" -e \"*\" --ignore \"./dist\" --ignore \"./docs\" --ignore \"./e2e/cypress\"",
     "lint": "pnpm \"/lint:check:.*/\"",
     "lint:fix": "pnpm \"/lint:fix:.*/\"",
-    "lint:check:code": "nx lint --reportUnusedDisableDirectives=warn",
-    "lint:check:e2e": "pnpm lint:check:code -- e2e",
+    "lint:check:code": "nx lint --reportUnusedDisableDirectives=error",
+    "lint:check:e2e": "nx lint e2e --reportUnusedDisableDirectives=error",
     "lint:check:style": "stylelint \"**/*.css\"",
     "lint:fix:code": "nx lint --cache --fix",
-    "lint:fix:e2e": "pnpm lint:fix:code -- e2e",
+    "lint:fix:e2e": "nx lint e2e --cache --fix",
     "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
     "format": "nx format:check --all",
     "format:code": "nx format:write --all",
@@ -60,11 +60,19 @@
       "author": true
     }
   ],
+  "maintainers": [
+    {
+      "name": "MessiInter",
+      "email": "messivsinter@gmail.com",
+      "url": "https://github.com/MessiInter",
+      "author": true
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/MessiInter/qr-code-gen/issues"
   },
-  "homepage": "https://messiinter.github.io/qr-code-gen",
+  "homepage": "https://github.com/MessiInter/qr-code-gen#readme",
   "dependencies": {
     "@angular/animations": "~17.0.0",
     "@angular/cdk": "^17.0.2",
@@ -117,7 +125,6 @@
     "eslint": "~8.46.0",
     "eslint-plugin-cypress": "^2.13.4",
     "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "git-auto-commit-msg": "^0.1.0",
     "gts": "^5.2.0",

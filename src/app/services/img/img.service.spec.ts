@@ -14,7 +14,8 @@ describe('ImgService', () => {
     service = TestBed.inject(ImgService);
   });
 
-  it('img service should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  it('image service should be created', () => expect(service).toBeTruthy());
+
+  it('save as image method should exist', () =>
+    expect(service.saveAsImage).toBeTruthy());
 });

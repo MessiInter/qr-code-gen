@@ -22,19 +22,20 @@
  *
  * @throws {Error}
  */
-if (process.platform === 'win32')
-  throw new Error(
-    'commit-status is not supported on Windows! Sorry for inconvenience!'
-  );
-
 /**
  * Import required modules
  */
 import {exec} from 'node:child_process';
 import {promisify} from 'node:util';
-import {commitMsg} from '../lib/commit-msg.mjs';
-import branch from '../lib/branch.mjs';
+
 import __root from '../lib/__root.mjs';
+import branch from '../lib/branch.mjs';
+import {commitMsg} from '../lib/commit-msg.mjs';
+
+if (process.platform === 'win32')
+  throw new Error(
+    'commit-status is not supported on Windows! Sorry for inconvenience!'
+  );
 
 /**
  * @constant
@@ -55,6 +56,7 @@ if (commitMsg === 'Docs: undefined') {
   /**
    * Exit the process
    */
+  // eslint-disable-next-line no-process-exit
   process.exit(0);
 }
 

@@ -1,8 +1,3 @@
-import {Decoder} from '@nuintun/qrcode';
-import {DecodeResult} from '@nuintun/qrcode/types/qrcode/decoder/decoder';
-import {join} from 'path';
-
-const {scan}: Decoder = new Decoder();
 const downloadsFolder: string = Cypress.config('downloadsFolder');
 const imagesPattern: string = 'QR_Code_*.png';
 
@@ -25,13 +20,6 @@ describe('e2e', () => {
   it('download files should exist', () =>
     cy.checkFiles(downloadsFolder, imagesPattern));
 
-  it('the data of qrcode files after decode should be correct', () => {
-    const files: string[] = cy.getFiles(downloadsFolder, imagesPattern) ?? [];
-
-    files.forEach((file: string) => {
-      const path: string = join(downloadsFolder, file);
-
-      scan(path).then((data: DecodeResult) => expect(data).to.be.true);
-    });
-  });
+  it('the data of qrcode files after decode should be correct', () =>
+    cy.scanFiles(downloadsFolder, imagesPattern));
 });

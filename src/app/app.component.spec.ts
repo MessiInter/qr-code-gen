@@ -23,11 +23,10 @@ describe('AppComponent', () => {
     compiled = fixture.nativeElement;
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('app component should be created', () => expect(component).toBeTruthy());
 
-  it('should render', () => {
-    expect(compiled).toBeTruthy();
-  });
+  it('should render', () => expect(compiled).toBeTruthy());
+
+  it('should render qrcode', () =>
+    expect(compiled.querySelector('.qrcode')).toBeTruthy());
 });

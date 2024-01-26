@@ -1,4 +1,11 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 /// <reference types="cypress" />
+import {Decoder} from '@nuintun/qrcode';
+import {join} from 'path';
+
+import {getFiles} from './app.po';
+
+const {scan}: Decoder = new Decoder();
 
 // ***********************************************
 // This example commands.ts shows you how to
@@ -10,13 +17,14 @@
 // https://on.cypress.io/custom-commands
 // ***********************************************
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace Cypress {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  interface Chainable<Subject> {
-    // login(email: string, password: string): void;
-    getFiles(dir: string, pattern?: string): string[];
-    checkFiles(dir: string, pattern?: string): void;
+declare global {
+  namespace Cypress {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    interface Chainable<Subject> {
+      // login(email: string, password: string): void;
+      checkFiles(dir?: string, pattern?: string): void;
+      scanFiles(dir?: string, pattern?: string): void;
+    }
   }
 }
 //
@@ -24,28 +32,24 @@ declare namespace Cypress {
 // Cypress.Commands.add('login', (email, password) => {
 //   console.log('Custom command example: Login', email, password);
 // });
-Cypress.Commands.add('getFiles', (dir, pattern = '*') => {
-  let files: string[] = [];
+Cypress.Commands.add('checkFiles', (dir = '.', pattern = '*') => {
+  const files: string[] = getFiles(dir, pattern);
 
-  cy.exec(`ls --color=never ${dir}/${pattern}`).then(
-    ({stdout}: {stdout: string}) => {
-      files = stdout.split(/\r\n|\n|\r/g);
-    }
-  );
-  return files;
+  files.forEach((file: string) => {
+    const path: string = join(dir, file);
+
+    cy.readFile(path).should('exist');
+  });
 });
 
-Cypress.Commands.add('checkFiles', (dir, pattern = '*') => {
-  let files: string[] = [];
+Cypress.Commands.add('scanFiles', (dir = '.', pattern = '*') => {
+  const files: string[] = getFiles(dir, pattern);
 
-  cy.exec(`ls --color=never ${dir}/${pattern}`).then(
-    ({stdout}: {stdout: string}) => {
-      files = stdout.split(/\r\n|\n|\r/g);
-    }
-  );
-  files.forEach((file: string) =>
-    cy.readFile(`${dir}/${file}`).should('exist')
-  );
+  files.forEach(async (file: string) => {
+    const path: string = join(dir, file);
+
+    expect(await scan(path)).to.be.true;
+  });
 });
 //
 // -- This is a child command --
@@ -58,3 +62,5 @@ Cypress.Commands.add('checkFiles', (dir, pattern = '*') => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+export {};

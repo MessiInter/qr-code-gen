@@ -14,7 +14,8 @@ describe('UrlService', () => {
     service = TestBed.inject(UrlService);
   });
 
-  it('URL service should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  it('url service should be created', () => expect(service).toBeTruthy());
+
+  it('convert base64 to blob method should exist', () =>
+    expect(service.base64ToBlob).toBeTruthy());
 });

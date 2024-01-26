@@ -1,23 +1,21 @@
 {
   "root": true,
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "ignorePatterns": ["!**/*"],
   "plugins": ["@nx"],
   "overrides": [
     {
+      "files": ["*.js", "*.mjs"],
+      "extends": ["./.eslintrc.app.json"]
+    },
+    {
       "files": ["*.ts"],
       "extends": [
-        "./node_modules/gts",
+        "./.eslintrc.app.json",
         "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "plugins": ["simple-import-sort", "import", "node"],
       "rules": {
         "@angular-eslint/directive-selector": [
-          "warn",
+          "error",
           {
             "type": "attribute",
             "prefix": "qrCodeGen",
@@ -25,22 +23,11 @@
           }
         ],
         "@angular-eslint/component-selector": [
-          "warn",
+          "error",
           {
             "type": "element",
             "prefix": "qr-code-gen",
             "style": "kebab-case"
-          }
-        ],
-        "simple-import-sort/imports": "warn",
-        "simple-import-sort/exports": "warn",
-        "import/first": "warn",
-        "import/newline-after-import": "warn",
-        "import/no-duplicates": "error",
-        "node/no-unpublished-import": [
-          "error",
-          {
-            "allowModules": ["@nuintun/qrcode", "@nx/cypress", "cypress"]
           }
         ]
       }
@@ -49,6 +36,13 @@
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
+      "parserOptions": {
+        "jsonSyntax": "JSONC"
+      }
     }
   ]
 }
