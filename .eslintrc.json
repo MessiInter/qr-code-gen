@@ -1,21 +1,21 @@
 {
   "root": true,
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "ignorePatterns": ["!**/*"],
-  "plugins": ["@nx", "simple-import-sort", "import"],
+  "plugins": ["@nx"],
   "overrides": [
+    {
+      "files": ["*.js", "*.mjs"],
+      "extends": ["./.eslintrc.app.json"]
+    },
     {
       "files": ["*.ts"],
       "extends": [
+        "./.eslintrc.app.json",
         "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
-          "warn",
+          "error",
           {
             "type": "attribute",
             "prefix": "qrCodeGen",
@@ -23,24 +23,26 @@
           }
         ],
         "@angular-eslint/component-selector": [
-          "warn",
+          "error",
           {
             "type": "element",
             "prefix": "qr-code-gen",
             "style": "kebab-case"
           }
-        ],
-        "simple-import-sort/imports": "warn",
-        "simple-import-sort/exports": "warn",
-        "import/first": "warn",
-        "import/newline-after-import": "warn",
-        "import/no-duplicates": "error"
+        ]
       }
     },
     {
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
+      "parserOptions": {
+        "jsonSyntax": "JSONC"
+      }
     }
   ]
 }

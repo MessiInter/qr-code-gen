@@ -7,8 +7,8 @@ ARG WORKSPACE_DIR=/workspaces/workspace
 
 WORKDIR $WORKSPACE_DIR
 
-RUN apt update && \
-    apt install --no-install-recommends -y \
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
 
 RUN corepack enable && \

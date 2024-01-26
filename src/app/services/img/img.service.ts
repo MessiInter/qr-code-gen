@@ -1,9 +1,9 @@
-import { inject, Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 
-import { QRCElement } from '../../interfaces/qrc-element';
-import { ElementType } from '../../types/element-type';
-import { FileService } from '../file/file.service';
-import { UrlService } from '../url/url.service';
+import {QRCElement} from '../../interfaces/qrc-element';
+import {ElementType} from '../../types/element-type';
+import {FileService} from '../file/file.service';
+import {UrlService} from '../url/url.service';
 
 @Injectable({
   providedIn: 'root',

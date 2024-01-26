@@ -1,3 +1,8 @@
-node_modules
+# Add files here to ignore them from eslint linting
+!**/*
 /dist
 /docs
+/coverage
+/.nx/cache
+.angular
+/v8-compile-cache-0

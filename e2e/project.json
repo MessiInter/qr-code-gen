@@ -24,7 +24,7 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["e2e/**/*.{js,ts}", "e2e/src/fixtures/**/*.json"]
       }
     }
   },

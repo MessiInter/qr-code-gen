@@ -50,8 +50,8 @@
           "sourceMap": true,
           "fileReplacements": [
             {
-              "replace": "src/environments/environment.ts",
-              "with": "src/environments/environment.development.ts"
+              "replace": "./src/environments/environment.ts",
+              "with": "./src/environments/environment.development.ts"
             }
           ]
         }
@@ -80,21 +80,26 @@
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["./src/**/*.ts", "./src/**/*.html"]
+        "lintFilePatterns": [
+          "./bin/**/*.mjs",
+          "./lib/**/*.mjs",
+          "./src/**/*.ts",
+          "./src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectName}"],
       "options": {
-        "jestConfig": "jest.config.ts"
+        "jestConfig": "./jest.config.ts"
       }
     },
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
         "buildTarget": "qr-code-gen:build",
-        "staticFilePath": "dist/qr-code-gen/browser"
+        "staticFilePath": "./dist/qr-code-gen/browser"
       }
     }
   }
