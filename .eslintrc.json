@@ -40,8 +40,23 @@
     {
       "files": ["*.json"],
       "parser": "jsonc-eslint-parser",
-      "parserOptions": {
-        "jsonSyntax": "JSONC"
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredDependencies": [
+              "@nx/jest",
+              "@angular/animations",
+              "@angular/cdk",
+              "@angular/compiler",
+              "@angular/platform-browser-dynamic",
+              "@nx/angular",
+              "rxjs",
+              "tslib",
+              "zone.js"
+            ]
+          }
+        ]
       }
     }
   ]

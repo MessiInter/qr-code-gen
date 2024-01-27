@@ -85,7 +85,7 @@
           "./lib/**/*.mjs",
           "./src/**/*.ts",
           "./src/**/*.html",
-          "./**/*.json"
+          "./package.json"
         ]
       }
     },
