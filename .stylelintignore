@@ -1,4 +1,5 @@
 # Add files here to ignore them from stylelint linting
+node_modules
 /dist
 /docs
 /coverage

@@ -1,0 +1,6 @@
+{
+  "extends": ["./.eslintrc.app.json"],
+  "env": {
+    "jest": true
+  }
+}

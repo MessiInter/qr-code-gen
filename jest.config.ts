@@ -1,3 +1,5 @@
+import {getJestProjects} from './src/get-jest-projects';
+
 export default {
-  projects: ['<rootDir>/jest.config.app.ts'],
+  projects: getJestProjects(),
 };

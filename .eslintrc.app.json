@@ -18,7 +18,7 @@
     "node/no-unpublished-import": [
       "error",
       {
-        "allowModules": ["@nx/cypress", "@nuintun/qrcode", "cypress"]
+        "allowModules": ["@nx/cypress", "@nuintun/qrcode", "cypress", "glob"]
       }
     ],
     "node/no-unpublished-require": [

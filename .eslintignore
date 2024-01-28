@@ -1,5 +1,4 @@
 # Add files here to ignore them from eslint linting
-!**/*
 node_modules
 /dist
 /docs

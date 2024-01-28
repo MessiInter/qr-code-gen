@@ -1,15 +1,11 @@
 {
-  "root": true,
+  "extends": ["./.eslintrc.base.json"],
+  "ignorePatterns": ["!**/*"],
   "plugins": ["@nx"],
   "overrides": [
     {
-      "files": ["*.js", "*.mjs"],
-      "extends": ["./.eslintrc.app.json"]
-    },
-    {
-      "files": ["*.ts"],
+      "files": ["*.{ts,tsx}"],
       "extends": [
-        "./.eslintrc.app.json",
         "plugin:@nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
@@ -36,28 +32,6 @@
       "files": ["*.html"],
       "extends": ["plugin:@nx/angular-template"],
       "rules": {}
-    },
-    {
-      "files": ["*.json"],
-      "parser": "jsonc-eslint-parser",
-      "rules": {
-        "@nx/dependency-checks": [
-          "error",
-          {
-            "ignoredDependencies": [
-              "@nx/jest",
-              "@angular/animations",
-              "@angular/cdk",
-              "@angular/compiler",
-              "@angular/platform-browser-dynamic",
-              "@nx/angular",
-              "rxjs",
-              "tslib",
-              "zone.js"
-            ]
-          }
-        ]
-      }
     }
   ]
 }

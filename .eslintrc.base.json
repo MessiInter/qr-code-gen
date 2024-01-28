@@ -1,0 +1,45 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nx"],
+  "overrides": [
+    {
+      "files": ["*.{js,cjs,mjs,jsx}"],
+      "extends": ["./.eslintrc.app.json", "plugin:@nx/javascript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.{ts,tsx}"],
+      "extends": ["./.eslintrc.app.json", "plugin:@nx/typescript"],
+      "rules": {}
+    },
+    {
+      "files": ["*.{spec,test}.{ts,js,cjs,mjs,tsx,jsx}"],
+      "extends": ["./.eslintrc.spec.json"],
+      "rules": {}
+    },
+    {
+      "files": ["*.json"],
+      "parser": "jsonc-eslint-parser",
+      "rules": {
+        "@nx/dependency-checks": [
+          "error",
+          {
+            "ignoredDependencies": [
+              "@angular/animations",
+              "@angular/cdk",
+              "@angular/compiler",
+              "@angular/platform-browser-dynamic",
+              "@nx/angular",
+              "@nx/jest",
+              "glob",
+              "rxjs",
+              "tslib",
+              "zone.js"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
