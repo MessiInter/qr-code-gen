@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright MessiInter and contributors All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE.md file at the root of this project.
+ */
+
 import {Component, inject, OnInit} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';

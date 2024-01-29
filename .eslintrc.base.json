@@ -11,11 +11,17 @@
     {
       "files": ["*.{ts,tsx}"],
       "extends": ["./.eslintrc.app.json", "plugin:@nx/typescript"],
+      "parserOptions": {
+        "project": "./tsconfig.app.json"
+      },
       "rules": {}
     },
     {
       "files": ["*.{spec,test}.{ts,js,cjs,mjs,tsx,jsx}"],
       "extends": ["./.eslintrc.spec.json"],
+      "parserOptions": {
+        "project": "./tsconfig.spec.json"
+      },
       "rules": {}
     },
     {
@@ -25,13 +31,19 @@
         "@nx/dependency-checks": [
           "error",
           {
+            "includeTransitiveDependencies": true,
+            "ignoredFiles": [
+              ".eslintrc.{js,cjs,mjs,jsx}",
+              ".stylelintrc.{js,cjs,mjs,jsx}",
+              ".prettierrc.{js,cjs,mjs,jsx}",
+              "jest.{config,preset}.{js,ts,cjs,mjs,jsx,tsx}"
+            ],
             "ignoredDependencies": [
               "@angular/animations",
               "@angular/cdk",
               "@angular/compiler",
               "@angular/platform-browser-dynamic",
               "@nx/angular",
-              "@nx/jest",
               "glob",
               "rxjs",
               "tslib",

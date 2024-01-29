@@ -13,12 +13,15 @@
     },
     {
       "files": ["*.{ts,tsx}"],
+      "parserOptions": {
+        "project": "e2e/tsconfig.json"
+      },
       "rules": {}
     },
     {
       "files": [
         "*.cy.{ts,js,cjs,mjs,tsx,jsx}",
-        "src/**/*.{ts,js,cjs,mjs,tsx,jsx}"
+        "./src/**/*.{ts,js,cjs,mjs,tsx,jsx}"
       ],
       "rules": {}
     },

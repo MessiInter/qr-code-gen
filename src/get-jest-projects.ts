@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright MessiInter and contributors All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE.md file at the root of this project.
+ */
+
 import {join, relative, resolve} from 'node:path';
 
 import {globSync} from 'glob';
