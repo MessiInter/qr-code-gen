@@ -1,9 +1,9 @@
-# Add files here to ignore them from prettier formatting
+# Add files here to ignore them from Prettier formatting
+dist
+docs
+/out-tsc
+coverage
 node_modules
-/dist
-/docs
-/coverage
-/.nx/cache
+.nx/cache
 .angular
-pnpm-lock.yaml
 /v8-compile-cache-0
