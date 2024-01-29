@@ -1,7 +1,9 @@
-# Add files here to ignore them from stylelint linting
-/dist
-/docs
-/coverage
-/.nx/cache
-.angular
+# Add files here to ignore them from Stylelint linting
+dist
+docs
+/out-tsc
+coverage
 node_modules
+.nx/cache
+.angular
+/v8-compile-cache-0

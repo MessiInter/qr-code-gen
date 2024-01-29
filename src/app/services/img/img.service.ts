@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Copyright MessiInter and contributors All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE.md file at the root of this project.
+ */
+
 import {inject, Injectable} from '@angular/core';
 
 import {QRCElement} from '../../interfaces/qrc-element';

@@ -1,4 +1,11 @@
-/* eslint-disable @typescript-eslint/no-namespace */
+/**
+ * @license
+ * Copyright MessiInter and contributors All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE.md file at the root of this project.
+ */
+
 /// <reference types="cypress" />
 import {Decoder} from '@nuintun/qrcode';
 import {join} from 'path';
@@ -18,6 +25,7 @@ const {scan}: Decoder = new Decoder();
 // ***********************************************
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     interface Chainable<Subject> {

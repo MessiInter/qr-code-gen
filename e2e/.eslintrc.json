@@ -1,28 +1,33 @@
 {
-  "extends": ["plugin:cypress/recommended", "../.eslintrc.json"],
+  "extends": [
+    "plugin:cypress/recommended",
+    "../.eslintrc.json",
+    "../.eslintrc.base.json"
+  ],
   "ignorePatterns": ["!**/*"],
+  "plugins": ["@nx"],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": ["*.{ts,js,cjs,mjs,tsx,jsx}"],
       "rules": {}
     },
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": ["*.{ts,tsx}"],
+      "parserOptions": {
+        "project": "e2e/tsconfig.json"
+      },
       "rules": {}
     },
     {
-      "files": ["*.js", "*.jsx"],
+      "files": [
+        "*.cy.{ts,js,cjs,mjs,tsx,jsx}",
+        "./src/**/*.{ts,js,cjs,mjs,tsx,jsx}"
+      ],
       "rules": {}
     },
     {
-      "files": ["*.cy.{ts,js,tsx,jsx}", "src/**/*.{ts,js,tsx,jsx}"],
-      "rules": {}
-    },
-    {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nx/javascript"],
+      "files": ["*.{js,cjs,mjs,jsx}"],
       "rules": {}
     }
-  ],
-  "plugins": ["@nx"]
+  ]
 }

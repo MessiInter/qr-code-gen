@@ -1,8 +1,9 @@
-# Add files here to ignore them from eslint linting
-!**/*
-/dist
-/docs
-/coverage
-/.nx/cache
+# Add files here to ignore them from ESLint linting
+dist
+docs
+/out-tsc
+coverage
+node_modules
+.nx/cache
 .angular
 /v8-compile-cache-0
