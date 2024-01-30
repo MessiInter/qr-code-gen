@@ -32,5 +32,5 @@ describe('AppComponent', () => {
   it('should render', () => expect(compiled).toBeTruthy());
 
   it('should render qrcode', () =>
-    expect(compiled.querySelector('.qrcode')).toBeTruthy());
+    expect(compiled.querySelector('.qrcode qrcode')).toBeTruthy());
 });
