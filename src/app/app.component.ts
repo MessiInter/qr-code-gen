@@ -3,7 +3,7 @@
  * Copyright MessiInter and contributors All Rights Reserved.
  *
  * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE.md file at the root of this project.
+ * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
 import {Component, inject, OnInit} from '@angular/core';
@@ -24,7 +24,7 @@ import {nanoid} from 'nanoid';
 import {HeaderComponent} from './components/header/header.component';
 import {QROptions} from './interfaces/qr-options';
 import {ImgService} from './services/img/img.service';
-import {ElementType} from './types/element-type';
+import type {ElementType} from './types/element-type';
 
 @Component({
   standalone: true,
@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
     alt: 'QR Code',
     ariaLabel: 'QR Code',
     initialQRData: 'https://github.com/MessiInter/qr-code-gen',
-    initialWidthHeight: 100,
+    initialWidthHeight: 150,
     margin: 1,
   };
 
@@ -78,16 +78,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    [this.qrDataForm, this.widthHeightForm].forEach((form: FormControl) => {
-      form.valueChanges.subscribe((val: string) => {
-        if (form === this.qrDataForm) {
-          this.qrData = val || this.qrCodeOptions.initialQRData;
-          this.filename = `QR_Code_SVG_${nanoid(6)}`;
-        } else {
-          this.widthHeight =
-            Number(val) || this.qrCodeOptions.initialWidthHeight;
-        }
-      });
+    this.qrDataForm.valueChanges.subscribe((val: string) => {
+      this.qrData = val || this.qrCodeOptions.initialQRData;
+      if (this.elementType === 'svg')
+        this.filename = `QR_Code_SVG_${nanoid(6)}`;
+    });
+
+    this.widthHeightForm.valueChanges.subscribe((val: string) => {
+      this.widthHeight = Number(val) || this.qrCodeOptions.initialWidthHeight;
     });
   }
 }
