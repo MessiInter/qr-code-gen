@@ -102,9 +102,6 @@
         "buildTarget": "qr-code-gen:build",
         "staticFilePath": "./dist/qr-code-gen/browser"
       }
-    },
-    "deploy": {
-      "executor": "angular-cli-ghpages:deploy"
     }
   }
 }
