@@ -6,6 +6,8 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/* This file will be compiled to CommonJS so we can use __dirname */
+
 import {join, relative, resolve} from 'node:path';
 
 import {globSync} from 'glob';
