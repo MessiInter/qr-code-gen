@@ -1,5 +1,5 @@
 {
-  "*.{css,sass,scss,less,styl}": "stylelint --allow-empty-input --cache --fix",
+  "*.{css,sass,scss}": "stylelint --allow-empty-input --cache --fix",
   "*.{js,ts,cjs,mjs,jsx,tsx,html,json}": "eslint --cache --fix",
   "*.{js,ts,cjs,mjs,jsx,tsx,html,css,sass,scss,less,styl,md,mdx,json}": "prettier --cache --write"
 }
