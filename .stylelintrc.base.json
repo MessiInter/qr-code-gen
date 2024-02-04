@@ -1,0 +1,9 @@
+{
+  "ignoreFiles": ["**/*"],
+  "overrides": [
+    {
+      "files": ["*.{css,sass,scss}"],
+      "extends": ["./.stylelintrc.app.json"]
+    }
+  ]
+}

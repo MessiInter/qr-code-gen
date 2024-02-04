@@ -102,6 +102,13 @@
         "buildTarget": "qr-code-gen:build",
         "staticFilePath": "./dist/qr-code-gen/browser"
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/*.{css,sass,scss}"]
+      }
     }
   }
 }
