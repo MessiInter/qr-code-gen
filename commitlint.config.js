@@ -10,15 +10,15 @@ module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
     'subject-case': [2, 'always', 'sentence-case'],
-    'subject-empty': [2, 'never'],
     'type-enum': [
       2,
       'always',
       ['Add', 'Add/update', 'Remove', 'Update', 'Docs'],
     ],
+    'type-empty': [0],
+    'subject-empty': [0],
     'scope-case': [2, 'always', 'kebab-case'],
     'scope-empty': [2, 'always'],
-    'references-empty': [2, 'never'],
     'body-leading-blank': [2, 'always'],
     'body-max-length': [2, 'always', 100],
     'footer-leading-blank': [2, 'always'],
