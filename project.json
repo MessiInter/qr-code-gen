@@ -81,10 +81,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "./bin/**/*.mjs",
-          "./lib/**/*.mjs",
-          "./src/**/*.ts",
-          "./src/**/*.html",
+          "./{bin,lib}/**/*.{ts,js,cjs,mjs,tsx,jsx}",
+          "./src/**/*.{ts,tsx,html}",
           "./**/package.json"
         ]
       }

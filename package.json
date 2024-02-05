@@ -4,16 +4,17 @@
   "private": true,
   "description": "QR Code Generator is a application that can quickly generate QR Code for general purposes uses",
   "bin": {
-    "commit-status": "./bin/commit-status.mjs"
+    "commit-and-push": "./bin/commit-and-push.mjs",
+    "cnp": "./bin/commit-and-push.mjs"
   },
   "keywords": [
     "QR",
-    "Generator",
     "QR Code",
-    "QR Code Generator",
+    "generate",
+    "generator",
+    "QR Code generator",
     "qr-code-gen",
-    "Angular",
-    "nx"
+    "qr-code"
   ],
   "scripts": {
     "start": "nx serve",
@@ -32,10 +33,10 @@
     "lint:fix": "pnpm \"/lint:fix:.*/\"",
     "lint:check:code": "nx lint --reportUnusedDisableDirectives=error",
     "lint:check:e2e": "nx lint e2e --reportUnusedDisableDirectives=error",
-    "lint:check:style": "stylelint \"**/*.css\"",
+    "lint:check:style": "nx stylelint --reportInvalidScopeDisables --reportNeedlessDisables",
     "lint:fix:code": "nx lint --cache --fix",
     "lint:fix:e2e": "nx lint e2e --cache --fix",
-    "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
+    "lint:fix:style": "nx stylelint --cache --fix",
     "format": "nx format:check --all",
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy",
