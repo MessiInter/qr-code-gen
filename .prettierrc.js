@@ -6,6 +6,4 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
-module.exports = {
-  ...require('gts/.prettierrc.json'),
-};
+module.exports = {...require('gts/.prettierrc.json')};

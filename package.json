@@ -40,7 +40,7 @@
     "format": "nx format:check --all",
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy",
-    "predeploy": "pnpm build -- --baseHref=\"/qr-code-gen/\" --outputPath=\"./docs\" && mv ./docs/browser/* ./docs && touch ./docs/browser/.gitkeep",
+    "predeploy": "./predeploy.sh",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
   "repository": {
@@ -108,6 +108,9 @@
     "@angular/cli": "~17.0.0",
     "@angular/compiler-cli": "~17.0.0",
     "@angular/language-service": "~17.0.0",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@commitlint/types": "^18.6.0",
     "@nuintun/qrcode": "^3.4.0",
     "@nx/cypress": "17.1.3",
     "@nx/eslint": "17.1.3",

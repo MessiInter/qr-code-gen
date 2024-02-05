@@ -36,7 +36,8 @@
               ".eslintrc.{js,cjs,mjs,jsx}",
               ".stylelintrc.{js,cjs,mjs,jsx}",
               ".prettierrc.{js,cjs,mjs,jsx}",
-              "jest.{config,preset}.{js,ts,cjs,mjs,jsx,tsx}"
+              "jest.{config,preset}.{js,ts,cjs,mjs,jsx,tsx}",
+              "commitlint.config.{ts,js,cjs,mjs,jsx,tsx}"
             ],
             "ignoredDependencies": [
               "@angular/animations",

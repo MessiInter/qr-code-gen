@@ -8,8 +8,8 @@
 
 import {inject, Injectable} from '@angular/core';
 
-import {QRCElement} from '../../interfaces/qrc-element';
-import {ElementType} from '../../types/element-type';
+import type {QRCElement} from '../../interfaces/qrc-element';
+import type {ElementType} from '../../types/element-type';
 import {FileService} from '../file/file.service';
 import {UrlService} from '../url/url.service';
 

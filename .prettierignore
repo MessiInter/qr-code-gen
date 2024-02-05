@@ -7,3 +7,4 @@ node_modules
 .nx/cache
 .angular
 /v8-compile-cache-0
+pnpm-lock.yaml
