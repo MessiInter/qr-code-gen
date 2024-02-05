@@ -6,7 +6,7 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
-import {Environment} from '../app/interfaces/environment';
+import type {Environment} from '../app/interfaces/environment';
 
 export const environment: Environment = {
   production: false,

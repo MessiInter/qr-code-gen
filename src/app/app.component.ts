@@ -22,7 +22,7 @@ import {QRCodeModule} from 'angularx-qrcode';
 import {nanoid} from 'nanoid';
 
 import {HeaderComponent} from './components/header/header.component';
-import {QROptions} from './interfaces/qr-options';
+import type {QROptions} from './interfaces/qr-options';
 import {ImgService} from './services/img/img.service';
 import type {ElementType} from './types/element-type';
 
