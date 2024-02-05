@@ -11,12 +11,12 @@ import type {UserConfig} from '@commitlint/types';
 export default <UserConfig>{
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'subject-case': [2, 'always', 'sentence-case'],
     'type-enum': [
       2,
       'always',
       ['Add', 'Add/update', 'Remove', 'Update', 'Docs'],
     ],
+    'type-case': [0],
     'type-empty': [0],
     'subject-empty': [0],
     'scope-case': [2, 'always', 'kebab-case'],
