@@ -81,10 +81,8 @@
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
-          "./bin/**/*.mjs",
-          "./lib/**/*.mjs",
-          "./src/**/*.ts",
-          "./src/**/*.html",
+          "./{bin,lib}/**/*.{ts,js,cjs,mjs,tsx,jsx}",
+          "./src/**/*.{ts,tsx,html}",
           "./**/package.json"
         ]
       }
@@ -101,6 +99,13 @@
       "options": {
         "buildTarget": "qr-code-gen:build",
         "staticFilePath": "./dist/qr-code-gen/browser"
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/*.{css,sass,scss}"]
       }
     }
   }

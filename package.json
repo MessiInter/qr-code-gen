@@ -4,16 +4,17 @@
   "private": true,
   "description": "QR Code Generator is a application that can quickly generate QR Code for general purposes uses",
   "bin": {
-    "commit-status": "./bin/commit-status.mjs"
+    "commit-and-push": "./bin/commit-and-push.mjs",
+    "cnp": "./bin/commit-and-push.mjs"
   },
   "keywords": [
     "QR",
-    "Generator",
     "QR Code",
-    "QR Code Generator",
+    "generate",
+    "generator",
+    "QR Code generator",
     "qr-code-gen",
-    "Angular",
-    "nx"
+    "qr-code"
   ],
   "scripts": {
     "start": "nx serve",
@@ -21,6 +22,9 @@
     "start:express": "node ./dist/qr-code-gen/server/server.mjs",
     "build": "nx build --sourceMap",
     "build:watch": "pnpm build -- --watch --configuration=development",
+    "clean": "pnpm \"/clean:.*/\"",
+    "clean:build": "rimraf ./dist",
+    "clean:docs": "rimraf ./docs",
     "test": "nx test",
     "test:watch": "pnpm test -- --watchAll",
     "e2e": "nx e2e e2e",
@@ -29,10 +33,10 @@
     "lint:fix": "pnpm \"/lint:fix:.*/\"",
     "lint:check:code": "nx lint --reportUnusedDisableDirectives=error",
     "lint:check:e2e": "nx lint e2e --reportUnusedDisableDirectives=error",
-    "lint:check:style": "stylelint \"**/*.css\"",
+    "lint:check:style": "nx stylelint --reportInvalidScopeDisables --reportNeedlessDisables",
     "lint:fix:code": "nx lint --cache --fix",
     "lint:fix:e2e": "nx lint e2e --cache --fix",
-    "lint:fix:style": "stylelint --cache --fix \"**/*.css\"",
+    "lint:fix:style": "nx stylelint --cache --fix",
     "format": "nx format:check --all",
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy",
@@ -138,7 +142,9 @@
     "lint-staged": "^15.2.0",
     "nodemon": "^3.0.2",
     "nx": "17.1.3",
+    "nx-stylelint": "^17.1.1",
     "prettier": "^2.6.2",
+    "rimraf": "^5.0.5",
     "stylelint": "^16.1.0",
     "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-standard": "^36.0.0",
