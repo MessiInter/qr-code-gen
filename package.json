@@ -81,7 +81,7 @@
   "homepage": "https://github.com/MessiInter/qr-code-gen#readme",
   "husky": {
     "hooks": {
-      "commit-msg": "cmck $HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint | cmck $HUSKY_GIT_PARAMS"
     }
   },
   "dependencies": {

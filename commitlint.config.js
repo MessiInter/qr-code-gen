@@ -23,6 +23,5 @@ module.exports = {
     'body-max-length': [2, 'always', 100],
     'footer-leading-blank': [2, 'always'],
     'footer-max-length': [2, 'always', 100],
-    'scope-full-path': [2, 'always', null],
   },
 };
