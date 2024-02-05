@@ -39,8 +39,8 @@
     "lint:fix:style": "nx stylelint --cache --fix",
     "format": "nx format:check --all",
     "format:code": "nx format:write --all",
-    "deploy": "pnpm predeploy && \"Build output has been pushed and ready to deploy.\"",
-    "predeploy": "./deploy.sh",
+    "deploy": "pnpm predeploy",
+    "predeploy": "./predeploy.sh",
     "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
   },
   "repository": {
