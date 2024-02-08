@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This code will be used to test the app
+ */
+
 const downloadsFolder: string = Cypress.config('downloadsFolder');
 const imagesPattern: string = 'QR_Code_*.png';
 

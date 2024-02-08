@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports Cypress configuration
+ */
+
 import {nxE2EPreset} from '@nx/cypress/plugins/cypress-preset';
 import {defineConfig} from 'cypress';
 

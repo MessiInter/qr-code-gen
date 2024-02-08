@@ -6,7 +6,14 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file will add custom commands to Cypress
+ * that can be executed by the test code
+ */
+
 /// <reference types="cypress" />
+
 import {Decoder} from '@nuintun/qrcode';
 import {join} from 'path';
 
