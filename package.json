@@ -41,7 +41,7 @@
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy",
     "predeploy": "./predeploy.sh",
-    "postinstall": "concurrently -p \"[{name}]\" -c \"bgGray.bold,bgYellow.bold\" -n \"HUSKY,PNPM\" \"husky install\" \"pnpm link -g\""
+    "postinstall": "./postinstall.sh"
   },
   "repository": {
     "type": "git",
