@@ -22,8 +22,9 @@ export default <UserConfig>{
     'scope-case': [2, 'always', 'kebab-case'],
     'scope-empty': [2, 'always'],
     'body-leading-blank': [2, 'always'],
-    'body-max-length': [2, 'always', 100],
+    'header-max-length': [0],
+    'body-max-length': [0],
     'footer-leading-blank': [2, 'always'],
-    'footer-max-length': [2, 'always', 100],
+    'footer-max-length': [0],
   },
 };
