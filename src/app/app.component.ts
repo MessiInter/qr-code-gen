@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file is the main logic and state of the app
+ */
+
 import {Component, inject, OnInit} from '@angular/core';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';

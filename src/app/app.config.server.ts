@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the configuration for SSR
+ */
+
 import {ApplicationConfig, mergeApplicationConfig} from '@angular/core';
 import {provideServerRendering} from '@angular/platform-server';
 
