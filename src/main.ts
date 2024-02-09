@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file will be used to bootstrap the app
+ */
+
 import {enableProdMode} from '@angular/core';
 import {bootstrapApplication} from '@angular/platform-browser';
 
