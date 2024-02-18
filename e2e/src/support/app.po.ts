@@ -6,6 +6,12 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This code will exports utilities function to
+ * use in test code
+ */
+
 import {join} from 'path';
 
 export function getFiles(dir = '.', pattern = '*'): string[] {

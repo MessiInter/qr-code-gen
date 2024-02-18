@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * This code will be used to test the
+ * header component of the app
+ */
+
 describe('header', () => {
   beforeEach(() => cy.visit('/'));
 

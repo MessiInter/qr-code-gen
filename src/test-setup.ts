@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file will be used to config Jest with Angular
+ */
+
 /* eslint-disable import/first */
 // @ts-expect-error https://thymikee.github.io/jest-preset-angular/docs/getting-started/test-environment
 

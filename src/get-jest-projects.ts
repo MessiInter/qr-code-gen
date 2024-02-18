@@ -6,7 +6,13 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
-/* This file will be compiled to CommonJS so we can use __dirname */
+/**
+ * @fileoverview
+ * This is a custom getJestProjects function because the
+ * function from @nx/jest doesn't work well
+ *
+ * This code will be patched using pnpm in future
+ */
 
 import {join, relative, resolve} from 'node:path';
 

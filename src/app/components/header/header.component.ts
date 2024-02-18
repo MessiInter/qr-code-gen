@@ -6,6 +6,12 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the header component
+ * main logic and states
+ */
+
 import {Component} from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 

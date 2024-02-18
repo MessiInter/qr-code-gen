@@ -6,6 +6,12 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the environment
+ * object interface (type)
+ */
+
 export interface Environment {
   production: boolean;
 }

@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports configuration to testing
+ */
+
 export default {
   displayName: 'qr-code-gen',
   preset: './jest.preset.js',

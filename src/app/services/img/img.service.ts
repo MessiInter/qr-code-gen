@@ -6,6 +6,12 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the main logic of the
+ * image service
+ */
+
 import {inject, Injectable} from '@angular/core';
 
 import type {QRCElement} from '../../interfaces/qrc-element';

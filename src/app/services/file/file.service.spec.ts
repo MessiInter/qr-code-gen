@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * THis file will be used to test the file service
+ */
+
 import {TestBed} from '@angular/core/testing';
 
 import {FileService} from './file.service';
