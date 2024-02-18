@@ -1,0 +1,84 @@
+diff --git a/src/utils/config/get-jest-projects.js b/src/utils/config/get-jest-projects.js
+index 25ed829269cee7c346764d2c35a56e19143b1c8e..51a4f263c7c6f30181884cad843cef17aa2d6c52 100644
+--- a/src/utils/config/get-jest-projects.js
++++ b/src/utils/config/get-jest-projects.js
+@@ -1,11 +1,25 @@
+-"use strict";
+-Object.defineProperty(exports, "__esModule", { value: true });
++/**
++ * @license
++ * Copyright MessiInter and contributors All Rights Reserved.
++ *
++ * Use of this source code is governed by an MIT-style license that can be
++ * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
++ */
++
++/**
++ * @fileoverview
++ * This code is patched by MessiInter
++ */
++
++'use strict';
++Object.defineProperty(exports, '__esModule', {value: true});
+ exports.getNestedJestProjects = exports.getJestProjects = void 0;
+-const path_1 = require("path");
+-const file_utils_1 = require("nx/src/project-graph/file-utils");
+-function getJestConfigProjectPath(projectJestConfigPath) {
++const path_1 = require('path');
++const glob_1 = require('glob');
++// const file_utils_1 = require("nx/src/project-graph/file-utils");
++/* function getJestConfigProjectPath(projectJestConfigPath) {
+     return (0, path_1.join)('<rootDir>', projectJestConfigPath);
+-}
++} */
+ /**
+  * Get a list of paths to all the jest config files
+  * using the Nx Jest executor.
+@@ -18,7 +32,7 @@ function getJestConfigProjectPath(projectJestConfigPath) {
+  * }
+  *
+  **/
+-function getJestProjects() {
++/* function getJestProjects() {
+     const ws = (0, file_utils_1.readWorkspaceConfig)({
+         format: 'nx',
+     });
+@@ -45,6 +59,22 @@ function getJestProjects() {
+         }
+     }
+     return Array.from(jestConfigurationSet);
++} */
++// Code patched by MessiInter
++const __root = path_1.join(__dirname, '../../../../../..');
++const pattern = '**/jest.config.*.{ts,js,cjs,mjs,tsx,jsx}';
++const rootDir = '<rootDir>';
++
++function getJestProjects() {
++  const files = glob_1.globSync(pattern);
++  const absoluteRootDir = path_1.resolve(__root);
++
++  return files.map(file => {
++    const absolutePath = path_1.resolve(__root, file);
++    return absolutePath.startsWith(absoluteRootDir)
++      ? path_1.join(rootDir, path_1.relative(absoluteRootDir, absolutePath))
++      : file;
++  });
+ }
+ exports.getJestProjects = getJestProjects;
+ /**
+@@ -53,10 +83,10 @@ exports.getJestProjects = getJestProjects;
+  * https://jestjs.io/docs/configuration#testpathignorepatterns-arraystring
+  * */
+ function getNestedJestProjects() {
+-    // TODO(caleb): get current project path and list of all projects and their rootDir
+-    // return a list of all projects that are nested in the current projects path
+-    // always include node_modules as that's the default
+-    const allProjects = getJestProjects();
+-    return ['/node_modules/'];
++  // TODO(caleb): get current project path and list of all projects and their rootDir
++  // return a list of all projects that are nested in the current projects path
++  // always include node_modules as that's the default
++  const allProjects = getJestProjects();
++  return ['/node_modules/'];
+ }
+ exports.getNestedJestProjects = getNestedJestProjects;

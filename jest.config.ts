@@ -11,7 +11,7 @@
  * This file exports configuration for Jest
  */
 
-import {getJestProjects} from './src/get-jest-projects';
+import {getJestProjects} from '@nx/jest';
 
 export default {
   projects: getJestProjects(),
