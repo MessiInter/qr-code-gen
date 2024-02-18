@@ -18,20 +18,13 @@
     "node/no-unpublished-import": [
       "error",
       {
-        "allowModules": [
-          "@nx/cypress",
-          "@commitlint/types",
-          "@nuintun/qrcode",
-          "cypress",
-          "jest-preset-angular",
-          "glob"
-        ]
+        "allowModules": ["@commitlint/types", "@nuintun/qrcode"]
       }
     ],
     "node/no-unpublished-require": [
       "error",
       {
-        "allowModules": ["@nx/jest", "gts"]
+        "allowModules": ["gts"]
       }
     ],
     "header/header": [

@@ -2,6 +2,7 @@
 dist
 docs
 /out-tsc
+/patches/packages
 coverage
 node_modules
 .nx/cache

@@ -9,7 +9,14 @@
   "overrides": [
     {
       "files": ["*.{ts,js,cjs,mjs,tsx,jsx}"],
-      "rules": {}
+      "rules": {
+        "node/no-unpublished-import": [
+          "error",
+          {
+            "allowModules": ["@nx/cypress", "cypress"]
+          }
+        ]
+      }
     },
     {
       "files": ["*.{ts,tsx}"],

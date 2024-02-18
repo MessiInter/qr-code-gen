@@ -2,5 +2,19 @@
   "extends": ["./.eslintrc.app.json"],
   "env": {
     "jest": true
+  },
+  "rules": {
+    "node/no-unpublished-import": [
+      "error",
+      {
+        "allowModules": ["@nx/jest", "jest-preset-angular"]
+      }
+    ],
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "allowModules": ["@nx/jest"]
+      }
+    ]
   }
 }
