@@ -6,6 +6,12 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the interface(type) for
+ * the QR options object
+ */
+
 export interface QROptions {
   alt: string;
   ariaLabel: string;

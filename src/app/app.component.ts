@@ -8,7 +8,7 @@
 
 /**
  * @fileoverview
- * This file is the main logic and state of the app
+ * This file is the main logic and states of the app
  */
 
 import {Component, inject, OnInit} from '@angular/core';

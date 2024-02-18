@@ -9,7 +9,7 @@
 /**
  * @fileoverview
  * This file exports the header component
- * main logic
+ * main logic and states
  */
 
 import {Component} from '@angular/core';

@@ -6,6 +6,11 @@
  * found in the LICENSE.md file at https://github.com/MessiInter/qr-code-gen/blob/master/LICENSE.md
  */
 
+/**
+ * @fileoverview
+ * This file exports the QR element interface (type)
+ */
+
 import {ElementRef} from '@angular/core';
 
 export interface QRCElement {
