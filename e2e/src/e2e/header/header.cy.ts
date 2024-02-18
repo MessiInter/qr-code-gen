@@ -7,6 +7,7 @@
  */
 
 /**
+ * @fileoverview
  * This code will be used to test the
  * header component of the app
  */
