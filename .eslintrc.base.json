@@ -19,7 +19,8 @@
     {
       "files": [
         "*.{spec,test}.{ts,js,cjs,mjs,tsx,jsx}",
-        "jest.config.{ts,js,cjs,mjs,tsx,jsx}"
+        "jest.config.{ts,js,cjs,mjs,tsx,jsx}",
+        "./src/test-setup.{ts,js,cjs,mjs,tsx,jsx}"
       ],
       "extends": ["./.eslintrc.spec.json"],
       "parserOptions": {
