@@ -2,7 +2,7 @@
   "name": "@qr-code-gen/source",
   "version": "0.0.0",
   "private": true,
-  "description": "QR Code Generator is a application that can quickly generate QR Code for general purposes uses",
+  "description": "Simple, fast QR Code Generator powered by Angular",
   "bin": {
     "commit-and-push": "./bin/commit-and-push.mjs",
     "cnp": "./bin/commit-and-push.mjs"
