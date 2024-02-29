@@ -19,7 +19,7 @@
   "scripts": {
     "start": "nx serve",
     "start:static": "nx serve-static",
-    "start:express": "node ./dist/qr-code-gen/server/server.mjs",
+    "start:express": "node ./dist/*/server/server.mjs",
     "build": "nx build --sourceMap",
     "build:watch": "pnpm build -- --watch --configuration=development",
     "clean": "pnpm \"/clean:.*/\"",
@@ -155,7 +155,8 @@
     "stylelint-order": "^6.0.4",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
-    "typescript": "~5.2.2"
+    "typescript": "~5.2.2",
+    "vitepress": "1.0.0-rc.44"
   },
   "packageManager": "pnpm@8.14.0",
   "pnpm": {
