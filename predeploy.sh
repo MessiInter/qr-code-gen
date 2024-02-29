@@ -6,7 +6,7 @@ BUILD_OUTPUT=./docs/app
 
 [ -d $BUILD_OUTPUT ] && rimraf $BUILD_OUTPUT
 
-pnpm build -- --baseHref=\"/$REPO_NAME/\" --outputPath=\"$BUILD_OUTPUT\"
+pnpm build -- --baseHref=\"/$REPO_NAME/app/\" --outputPath=\"$BUILD_OUTPUT\"
 mv $BUILD_OUTPUT/browser/* ./docs/app
 rimraf --glob $BUILD_OUTPUT/{browser,server}
 cnp

@@ -5,7 +5,6 @@
       "command": "pnpm install"
     }
   ],
-
   "tasks": {
     "start": {
       "name": "start",
@@ -13,6 +12,30 @@
       "runAtStart": true,
       "preview": {
         "port": 4200
+      }
+    },
+    "start:express": {
+      "name": "start (express)",
+      "command": "pnpm start:express",
+      "runAtStart": false,
+      "preview": {
+        "port": 4000
+      }
+    },
+    "docs:dev": {
+      "name": "docs (dev)",
+      "command": "pnpm docs:dev",
+      "runAtStart": false,
+      "preview": {
+        "port": 5173
+      }
+    },
+    "docs:preview": {
+      "name": "docs (preview)",
+      "command": "./docs-preview.sh",
+      "runAtStart": false,
+      "preview": {
+        "port": 4173
       }
     }
   }
