@@ -24,7 +24,7 @@
     "build:watch": "pnpm build -- --watch --configuration=development",
     "clean": "pnpm \"/clean:.*/\"",
     "clean:build": "rimraf ./dist",
-    "clean:docs": "rimraf ./docs",
+    "clean:docs": "rimraf ./docs/app",
     "test": "nx test",
     "test:watch": "pnpm test -- --watchAll",
     "e2e": "nx e2e e2e",
