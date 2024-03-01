@@ -1,6 +1,7 @@
 # Add files here to ignore them from ESLint linting
 dist
 docs/app
+docs/assets
 docs/.vitepress/cache
 !docs/.vitepress/*.{ts,js,cjs,mjs,cts,mts,tsx,jsx}
 /out-tsc

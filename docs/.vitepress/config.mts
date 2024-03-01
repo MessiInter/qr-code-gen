@@ -40,4 +40,6 @@ export default defineConfig({
       {icon: 'github', link: 'https://github.com/MessiInter/qr-code-gen'},
     ],
   },
+
+  base: '/qr-code-gen/',
 });
