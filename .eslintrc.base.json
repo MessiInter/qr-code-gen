@@ -9,7 +9,7 @@
       "rules": {}
     },
     {
-      "files": ["*.{ts,tsx}"],
+      "files": ["*.{ts,cts,mts,tsx}"],
       "extends": ["./.eslintrc.app.json", "plugin:@nx/typescript"],
       "parserOptions": {
         "project": "./tsconfig.app.json"
@@ -18,9 +18,9 @@
     },
     {
       "files": [
-        "*.{spec,test}.{ts,js,cjs,mjs,tsx,jsx}",
-        "jest.config.{ts,js,cjs,mjs,tsx,jsx}",
-        "./src/test-setup.{ts,js,cjs,mjs,tsx,jsx}"
+        "*.{spec,test}.{ts,js,cjs,cts,mjs,mts,tsx,jsx}",
+        "jest.config.{ts,js,cjs,mjs,cts,mts,tsx,jsx}",
+        "./src/test-setup.{ts,js,cjs,mjs,cts,mts,tsx,jsx}"
       ],
       "extends": ["./.eslintrc.spec.json"],
       "parserOptions": {
@@ -37,11 +37,12 @@
           {
             "includeTransitiveDependencies": true,
             "ignoredFiles": [
-              ".eslintrc*.{js,cjs,mjs,jsx}",
-              ".stylelintrc*.{js,cjs,mjs,jsx}",
-              ".prettierrc*.{js,cjs,mjs,jsx}",
-              "jest.{config,preset}*.{js,ts,cjs,mjs,jsx,tsx}",
-              "commitlint.config*.{ts,js,cjs,mjs,jsx,tsx}"
+              ".eslintrc*.{js,cjs,mjs,cts,mts,jsx}",
+              ".stylelintrc*.{js,cjs,mjs,cts,mts,jsx}",
+              ".prettierrc*.{js,cjs,mjs,cts,mts,jsx}",
+              "jest.{config,preset}*.{js,ts,cjs,mjs,cts,mts,jsx,tsx}",
+              "commitlint.config*.{ts,js,cjs,mjs,cts,mts,jsx,tsx}",
+              "./docs/.vitepress/config*.{ts,js,cjs,mjs,cts,mts,jsx,tsx}"
             ],
             "ignoredDependencies": [
               "@angular/animations",

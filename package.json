@@ -2,7 +2,7 @@
   "name": "@qr-code-gen/source",
   "version": "0.0.0",
   "private": true,
-  "description": "QR Code Generator is a application that can quickly generate QR Code for general purposes uses",
+  "description": "Simple, fast QR Code Generator powered by Angular",
   "bin": {
     "commit-and-push": "./bin/commit-and-push.mjs",
     "cnp": "./bin/commit-and-push.mjs"
@@ -41,7 +41,10 @@
     "format:code": "nx format:write --all",
     "deploy": "pnpm predeploy",
     "predeploy": "./predeploy.sh",
-    "postinstall": "./postinstall.sh"
+    "postinstall": "./postinstall.sh",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "repository": {
     "type": "git",

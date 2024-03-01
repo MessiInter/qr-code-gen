@@ -8,7 +8,7 @@
   "plugins": ["@nx"],
   "overrides": [
     {
-      "files": ["*.{ts,js,cjs,mjs,tsx,jsx}"],
+      "files": ["*.{ts,js,cjs,mjs,cts,mts,tsx,jsx}"],
       "rules": {
         "node/no-unpublished-import": [
           "error",
@@ -19,7 +19,7 @@
       }
     },
     {
-      "files": ["*.{ts,tsx}"],
+      "files": ["*.{ts,cts,mts,tsx}"],
       "parserOptions": {
         "project": "e2e/tsconfig.json"
       },
@@ -27,8 +27,8 @@
     },
     {
       "files": [
-        "*.cy.{ts,js,cjs,mjs,tsx,jsx}",
-        "./src/**/*.{ts,js,cjs,mjs,tsx,jsx}"
+        "*.cy.{ts,js,cjs,mjs,cts,mts,tsx,jsx}",
+        "./src/**/*.{ts,js,cjs,mjs,cts,mts,tsx,jsx}"
       ],
       "rules": {}
     },
