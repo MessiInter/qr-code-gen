@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-# set -e
+set -e
 
 REPO_NAME=$(node -p "require(\"git-repo-name\").sync()")
 BUILD_OUTPUT=./docs
