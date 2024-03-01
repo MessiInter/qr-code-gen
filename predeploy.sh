@@ -1,16 +1,17 @@
 #!/usr/bin/env sh
-set -e
-
-deleteOutputs() {
-  [ -d $BUILD_OUTPUT/app ] && rimraf $BUILD_OUTPUT/app
-  [ -d $BUILD_OUTPUT/.vitepress/dist ] && rimraf $BUILD_OUTPUT/.vitepress/dist
-}
+# set -e
 
 REPO_NAME=$(node -p "require(\"git-repo-name\").sync()")
 BUILD_OUTPUT=./docs
 
+deleteOutputs() {
+  [ -d $BUILD_OUTPUT/app ] && rimraf $BUILD_OUTPUT/app
+}
+
+
 case $1 in
   "--force") deleteOutputs ;;
+
   "-f") deleteOutputs ;;
 esac
 
