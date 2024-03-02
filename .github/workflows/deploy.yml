@@ -45,10 +45,9 @@ jobs:
         run: pnpm install # or pnpm install / yarn install / bun install
       - name: Build
         run: |
-          pnpm build -- --sourceMap --baseHref="/$(node -p \"require('git-repo-name').sync()\")/app/" --outputPath="docs/public/app"
-          mv docs/public/app/browser/* docs/public/app
-          rimraf --glob docs/public/app/{browser,server}
-          pnpm docs:build -- --base "/$(node -p \"require('git-repo-name').sync()\")/app/"
+          pnpm build -- --sourceMap --baseHref="/$(node -p \"require('git-repo-name').sync()\")/app/" --outputPath="docs/app"
+          cp -r docs//app/browser/* docs/public/app
+          pnpm docs:build -- --base "/$(node -p \"require('git-repo-name').sync()\")"
           cp -r docs/.vitepress/dist/* docs/public
 
       - name: Upload artifact
