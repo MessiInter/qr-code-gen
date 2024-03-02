@@ -42,7 +42,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: npm ci # or pnpm install / yarn install / bun install
+        run: pnpm install # or pnpm install / yarn install / bun install
       - name: Build
         run: |
           pnpm build -- --sourceMap --baseHref="/$(node -p \"require('git-repo-name').sync()\")/app/" --outputPath="docs/public/app"
