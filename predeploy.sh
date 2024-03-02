@@ -21,7 +21,7 @@ pnpm build -- --baseHref="/$REPO_NAME/app/" --outputPath="$BUILD_OUTPUT/app"
 mv $BUILD_OUTPUT/app/browser/* ./docs/app
 rimraf --glob $BUILD_OUTPUT/app/{browser,server}
 
-pnpm docs:build
+pnpm docs:build -- --base "/$REPO_NAME/"
 cp -r $BUILD_OUTPUT/.vitepress/dist/* $BUILD_OUTPUT
 
 cnp
