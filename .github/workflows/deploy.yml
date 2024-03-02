@@ -53,10 +53,9 @@ jobs:
           
         run: |
           pnpm build -- --baseHref="/$REPO_NAME/app/" --outputPath="docs/unpublished/app"
-          pnpm docs:build -- --base "/$REPO_NAME/"
+          pnpm docs:build -- --base "/$REPO_NAME/" --outDir docs/public
           [ ! -d docs/public ] && mkdir -p docs/public/app
           cp -r docs/unpublished/app/browser/* docs/public/app
-          cp -r docs/.vitepress/dist/* docs/public
           touch docs/public/.nojekyll
 
       - name: Upload artifact
