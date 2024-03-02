@@ -31,7 +31,7 @@
     "e2e:watch": "nodemon -x \"clear && pnpm e2e\" -e \"*\" --ignore \"./dist\" --ignore \"./docs\" --ignore \"./e2e/cypress\"",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
+    "docs:preview": "./docs-preview.sh",
     "lint": "pnpm \"/lint:check:.*/\"",
     "lint:fix": "pnpm \"/lint:fix:.*/\"",
     "lint:check:code": "nx lint --reportUnusedDisableDirectives=error",
