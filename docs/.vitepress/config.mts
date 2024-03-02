@@ -13,7 +13,11 @@
 
 /* eslint-disable node/no-unsupported-features/es-syntax */
 
+import {createRequire} from 'node:module';
+
 import {defineConfig} from 'vitepress';
+
+const require: NodeRequire = createRequire(import.meta.url);
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -23,7 +27,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       {text: 'Home', link: '/'},
-      {text: 'Examples', link: '/markdown-examples'},
+      {text: 'App', link: '/app'},
     ],
 
     sidebar: [
@@ -41,5 +45,5 @@ export default defineConfig({
     ],
   },
 
-  base: '/qr-code-gen/',
+  base: `/${require('git-repo-name').sync()}/`,
 });

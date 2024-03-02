@@ -9,7 +9,7 @@ WORKDIR $WORKSPACE_DIR
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
-    libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+    libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb xdg-utils
 
 RUN corepack enable && \
     corepack prepare --activate pnpm@8.14.0
