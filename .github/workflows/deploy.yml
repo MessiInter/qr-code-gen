@@ -53,7 +53,7 @@ jobs:
           
         run: |
           pnpm build -- --baseHref="/$REPO_NAME/app/" --outputPath="docs/unpublished/app"
-          vitepress build docs --base "/$REPO_NAME/" --outDir docs/public
+          pnpm exec vitepress build docs --base "/$REPO_NAME/" --outDir docs/public
           [ ! -d docs/public ] && mkdir -p docs/public/app
           cp -r docs/unpublished/app/browser/* docs/public/app
           touch docs/public/.nojekyll
