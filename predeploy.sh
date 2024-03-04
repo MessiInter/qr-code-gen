@@ -1,28 +1,21 @@
 #!/usr/bin/env sh
 set -e
 
-REPO_NAME=$(node -p "require(\"git-repo-name\").sync()")
-BUILD_OUTPUT=./docs
-
-deleteOutputs() {
-  [ -d $BUILD_OUTPUT/app ] && rimraf $BUILD_OUTPUT/app
-}
+RED="\e[31m"
+RESET="\e[0m"
 
 
-case $1 in
-  "--force") deleteOutputs ;;
+printf "${RED}-----------------------------------${RESET}\n"
+printf "${RED}|            DEPRECATED           |${RESET}\n"
+printf "${RED}-----------------------------------${RESET}\n"
+printf "${RED}| This script has been deprecated |${RESET}\n"
+printf "${RED}| Author message:                 |${RESET}\n"
+printf "${RED}| ------------------------------- |${RESET}\n"
+printf "${RED}| This project no longer uses ... |${RESET}\n"
+printf "${RED}| ... this script to deploy now!  |${RESET}\n"
+printf "${RED}| ------------------------------- |${RESET}\n"
+printf "${RED}| All deployments will now happen |${RESET}\n"
+printf "${RED}| .............on GitHub Actions. |${RESET}\n"
+printf "${RED}-----------------------------------${RESET}\n"
 
-  "-f") deleteOutputs ;;
-esac
-
-[ -d $BUILD_OUTPUT/assets ] && rimraf $BUILD_OUTPUT/assets
-
-pnpm build -- --baseHref="/$REPO_NAME/app/" --outputPath="$BUILD_OUTPUT/app"
-mv $BUILD_OUTPUT/app/browser/* ./docs/app
-rimraf --glob $BUILD_OUTPUT/app/{browser,server}
-
-pnpm docs:build -- --base "/$REPO_NAME/"
-cp -r $BUILD_OUTPUT/.vitepress/dist/* $BUILD_OUTPUT
-
-cnp
-exit $?
+exit 1
