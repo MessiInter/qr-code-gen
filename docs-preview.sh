@@ -2,11 +2,14 @@
 set -e
 
 build_docs() {
-  [ ! -d .vitepress/dist ] && pnpm docs:build
+  [ ! -d ./docs/.vitepress/dist ] && pnpm docs:build
 }
 
 force_build_docs() {
-  [ -d .vitepress/dist ] && build_docs
+  [ -d ./docs/.vitepress/dist ] && (
+    rimraf ./docs/.vitepress/dist
+    build_docs
+  )
 }
 
 case $1 in
