@@ -22,8 +22,8 @@ See Code Of Coduct in [CODE_OF_CONDUCT.md](https://github.com/MessiInter/qr-code
 
 ### Attribution
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [https://contributor-covenant.org/version/1/4][version]
+This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 2.0,
+available at [https://contributor-covenant.org/version/2/0][here]
 
 [homepage]: https://contributor-covenant.org
-[version]: https://contributor-covenant.org/version/1/4/
+[version]: https://contributor-covenant.org/version/2/0/
