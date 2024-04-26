@@ -7,6 +7,7 @@
     "zhuangtongfa.Material-theme", // * One Dark Pro
     "vscode-icons-team.vscode-icons", // * vscode-icons
     "aaron-bond.better-comments", // * Better comments
-    "stylelint.vscode-stylelint" // * stylelint
+    "stylelint.vscode-stylelint", // * Stylelint
+    "GitHub.vscode-pull-request-github" // * GitHub Pull Requests
   ]
 }

@@ -10,5 +10,11 @@
   "containerEnv": {
     "NODE_ENV": "development"
   },
-  "forwardPorts": ["4200:4200"]
+  "forwardPorts": ["4200:4200"],
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "os-provided",
+      "ppa": true
+    }
+  }
 }
