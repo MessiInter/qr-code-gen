@@ -9,3 +9,4 @@ node_modules
 .angular
 /v8-compile-cache-0
 pnpm-lock.yaml
+.vscode
