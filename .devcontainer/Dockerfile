@@ -16,15 +16,13 @@ WORKDIR $WORKSPACE_DIR
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
     libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb xdg-utils
-
-ENV NPM_CONFIG_PREFIX=/usr/local
-
-RUN yarn global add pnpm@$PNPM_VERSION
-
+    
 ENV PNPM_HOME=/root/.local/share/pnpm
+
+ENV PATH=$PNPM_HOME:$WORKSPACE_DIR/node_modules/.bin:$PATH
 
 ENV NPM_CONFIG_STORE_DIR=/root/.cache/pnpm
 
-ENV PATH=$PNPM_HOME:$WORKSPACE_DIR/node_modules/.bin:$PATH
+RUN npx --yes pnpm@$PNPM_VERSION add -g pnpm@$PNPM_VERSION
 
 RUN pnpm add -g nx@$NX_VERSION
