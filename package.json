@@ -55,9 +55,7 @@
     "npm": "Please use pnpm instead of npm to install dependencies",
     "yarn": "Please use pnpm instead of yarn to install dependencies"
   },
-  "os": [
-    "!win32"
-  ],
+  "os": ["!win32"],
   "author": "qr-code-gen authors",
   "contributors": [
     {
@@ -161,7 +159,7 @@
     "typescript": "~5.2.2",
     "vitepress": "1.0.0-rc.44"
   },
-  "packageManager": "pnpm@8.14.0",
+  "packageManager": "pnpm@9.0.6",
   "pnpm": {
     "patchedDependencies": {
       "@nx/jest@17.1.3": "patches/@nx__jest@17.1.3.patch"
