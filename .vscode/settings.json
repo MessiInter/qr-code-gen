@@ -10,6 +10,5 @@
     "*.sh": "shellscript" // * Display color theme in shell script
   },
   "editor.formatOnPaste": true, // * Format code on paste
-  "editor.defaultFormatter": "esbenp.prettier-vscode", // * Use Prettier to format code
-  "better-comments.highlightPlainText": true
+  "editor.defaultFormatter": "esbenp.prettier-vscode" // * Use Prettier to format code
 }

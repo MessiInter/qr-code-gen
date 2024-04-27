@@ -23,6 +23,7 @@ ENV PATH=$PNPM_HOME:$WORKSPACE_DIR/node_modules/.bin:$PATH
 
 ENV NPM_CONFIG_STORE_DIR=/root/.cache/pnpm
 
-RUN npx --yes pnpm@$PNPM_VERSION add -g pnpm@$PNPM_VERSION
+RUN corepack enable && \
+  corepack install -g pnpm@$PNPM_VERSION
 
 RUN pnpm add -g nx@$NX_VERSION
