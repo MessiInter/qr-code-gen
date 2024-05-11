@@ -8,13 +8,27 @@
   "postCreateCommand": "pnpm install",
   "containerUser": "root",
   "containerEnv": {
-    "NODE_ENV": "development"
+    "NODE_ENV": "development",
+    "CI": 0
   },
-  "forwardPorts": ["4200:4200"],
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {
-      "version": "os-provided",
-      "ppa": true
+  "forwardPorts": ["4200", "5173", "4173", "4000"],
+  "portsAttributes": {
+    "4200": {
+      "label": "app (dev)",
+      "onAutoForward": "notify"
+    },
+    "5173": {
+      "label": "docs (dev)",
+      "onAutoForward": "notify"
+    },
+    "4173": {
+      "label": "docs (preview)",
+      "onAutoForward": "notify"
+    },
+    "4000": {
+      "label": "app (prod)",
+      "onAutoForward": "notify"
     }
-  }
+  },
+  "features": {}
 }

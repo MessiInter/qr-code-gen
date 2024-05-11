@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "QR Code Generator"
-  text: "Simple, fast QR Code Generator powered by Angular"
+  name: 'QR Code Generator'
+  text: 'Simple, fast QR Code Generator powered by Angular'
   tagline: My great project tagline
   actions:
     - theme: brand
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

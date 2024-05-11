@@ -1,11 +1,10 @@
 # Add files here to ignore them from ESLint linting
 dist
-docs/app
-docs/assets
+docs/{app,assets}
 docs/.vitepress/cache
 !docs/.vitepress/*.{ts,js,cjs,mjs,cts,mts,tsx,jsx}
 /out-tsc
-/patches/packages
+patches/packages
 coverage
 node_modules
 .nx/cache

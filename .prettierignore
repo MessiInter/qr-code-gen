@@ -1,12 +1,13 @@
 # Add files here to ignore them from Prettier formatting
 dist
-docs
+docs/{app,assets}
+docs/.vitepress/cache
+!docs/.vitepress/*.{ts,js,cjs,mjs,cts,mts,jsx,tsx}
 /out-tsc
-/patches/packages
+patches/packages
 coverage
 node_modules
 .nx/cache
 .angular
 /v8-compile-cache-0
 pnpm-lock.yaml
-.vscode

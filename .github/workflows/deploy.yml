@@ -23,29 +23,29 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - uses: pnpm/action-setup@v2
 
       - name: Get repository name
         id: repo-name
         uses: MariachiBear/get-repo-name-action@v1.2.0
-        
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
       - name: Install dependencies
         run: pnpm install
-      
+
       - name: Build
         env:
           REPO_NAME: ${{ steps.repo-name.outputs.repository-name }}
-          
+
         run: |
           pnpm build -- --baseHref="/$REPO_NAME/app/" --outputPath="./docs/.cache/app"
           pnpm exec vitepress build docs --base "/$REPO_NAME/" --outDir ./docs/public
@@ -63,7 +63,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
+
     needs: build
     runs-on: ubuntu-latest
     name: Deploy
